@@ -2,9 +2,9 @@
 /**
  * Footer Widgets
  *
- * Registers footer widget areas and hooks into the Wellington theme to display widgets
+ * Registers footer widget areas and hooks into the Treville theme to display widgets
  *
- * @package Wellington Pro
+ * @package Treville Pro
  */
 
 // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Footer Widgets Class
  */
-class Wellington_Pro_Footer_Widgets {
+class Treville_Pro_Footer_Widgets {
 
 	/**
 	 * Footer Widgets Setup
@@ -22,20 +22,20 @@ class Wellington_Pro_Footer_Widgets {
 	 */
 	static function setup() {
 
-		// Return early if Wellington Theme is not active.
-		if ( ! current_theme_supports( 'wellington-pro' ) ) {
+		// Return early if Treville Theme is not active.
+		if ( ! current_theme_supports( 'treville-pro' ) ) {
 			return;
 		}
 
 		// Display footer widgets.
-		add_action( 'wellington_before_footer', array( __CLASS__, 'display_widgets' ), 20 );
+		add_action( 'treville_before_footer', array( __CLASS__, 'display_widgets' ), 20 );
 
 	}
 
 	/**
 	 * Displays Footer Widgets
 	 *
-	 * Hooks into the wellington_before_footer action hook in footer area.
+	 * Hooks into the treville_before_footer action hook in footer area.
 	 */
 	static function display_widgets() {
 
@@ -100,16 +100,16 @@ class Wellington_Pro_Footer_Widgets {
 	 */
 	static function register_widgets() {
 
-		// Return early if Wellington Theme is not active.
-		if ( ! current_theme_supports( 'wellington-pro' ) ) {
+		// Return early if Treville Theme is not active.
+		if ( ! current_theme_supports( 'treville-pro' ) ) {
 			return;
 		}
 
 		// Register Footer Column 1 widget area.
 		register_sidebar( array(
-			'name' => __( 'Footer Column 1', 'wellington-pro' ),
+			'name' => __( 'Footer Column 1', 'treville-pro' ),
 			'id' => 'footer-column-1',
-			'description' => __( 'Appears on the first footer column.', 'wellington-pro' ),
+			'description' => __( 'Appears on the first footer column.', 'treville-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 			'after_widget' => '</aside>',
 			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
@@ -118,9 +118,9 @@ class Wellington_Pro_Footer_Widgets {
 
 		// Register Footer Column 2 widget area.
 		register_sidebar( array(
-			'name' => __( 'Footer Column 2', 'wellington-pro' ),
+			'name' => __( 'Footer Column 2', 'treville-pro' ),
 			'id' => 'footer-column-2',
-			'description' => __( 'Appears on the second footer column.', 'wellington-pro' ),
+			'description' => __( 'Appears on the second footer column.', 'treville-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 			'after_widget' => '</aside>',
 			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
@@ -129,9 +129,9 @@ class Wellington_Pro_Footer_Widgets {
 
 		// Register Footer Column 3 widget area.
 		register_sidebar( array(
-			'name' => __( 'Footer Column 3', 'wellington-pro' ),
+			'name' => __( 'Footer Column 3', 'treville-pro' ),
 			'id' => 'footer-column-3',
-			'description' => __( 'Appears on the third footer column.', 'wellington-pro' ),
+			'description' => __( 'Appears on the third footer column.', 'treville-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 			'after_widget' => '</aside>',
 			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
@@ -140,9 +140,9 @@ class Wellington_Pro_Footer_Widgets {
 
 		// Register Footer Column 4 widget area.
 		register_sidebar( array(
-			'name' => __( 'Footer Column 4', 'wellington-pro' ),
+			'name' => __( 'Footer Column 4', 'treville-pro' ),
 			'id' => 'footer-column-4',
-			'description' => __( 'Appears on the fourth footer column.', 'wellington-pro' ),
+			'description' => __( 'Appears on the fourth footer column.', 'treville-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 			'after_widget' => '</aside>',
 			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
@@ -153,7 +153,7 @@ class Wellington_Pro_Footer_Widgets {
 }
 
 // Run Class.
-add_action( 'init', array( 'Wellington_Pro_Footer_Widgets', 'setup' ) );
+add_action( 'init', array( 'Treville_Pro_Footer_Widgets', 'setup' ) );
 
 // Register widgets in backend.
-add_action( 'widgets_init', array( 'Wellington_Pro_Footer_Widgets', 'register_widgets' ), 20 );
+add_action( 'widgets_init', array( 'Treville_Pro_Footer_Widgets', 'register_widgets' ), 20 );

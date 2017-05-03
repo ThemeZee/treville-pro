@@ -29,7 +29,7 @@ gulp.task( 'cleancss', function() {
 
 // RTL CSS
 gulp.task( 'rtlcss', function () {
-	return gulp.src( 'assets/css/wellington-pro.css' )
+	return gulp.src( 'assets/css/treville-pro.css' )
 		.pipe( rtlcss() )
 		.pipe( rename( {
 			suffix: '-rtl'

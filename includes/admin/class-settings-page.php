@@ -1,10 +1,10 @@
 <?php
 /**
- * Wellington Pro Settings Page Class
+ * Treville Pro Settings Page Class
  *
  * Adds a new tab on the themezee plugins page and displays the settings page.
  *
- * @package Wellington Pro
+ * @package Treville Pro
  */
 
 // Exit if accessed directly.
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Settings Page Class
  */
-class Wellington_Pro_Settings_Page {
+class Treville_Pro_Settings_Page {
 
 	/**
 	 * Setup the Settings Page class
@@ -37,16 +37,16 @@ class Wellington_Pro_Settings_Page {
 	 */
 	static function add_settings_page() {
 
-		// Return early if Wellington Theme is not active.
-		if ( ! current_theme_supports( 'wellington-pro' ) ) {
+		// Return early if Treville Theme is not active.
+		if ( ! current_theme_supports( 'treville-pro' ) ) {
 			return;
 		}
 
 		add_theme_page(
-			esc_html__( 'Pro Version', 'wellington-pro' ),
-			esc_html__( 'Pro Version', 'wellington-pro' ),
+			esc_html__( 'Pro Version', 'treville-pro' ),
+			esc_html__( 'Pro Version', 'treville-pro' ),
 			'edit_theme_options',
-			'wellington-pro',
+			'treville-pro',
 			array( __CLASS__, 'display_settings_page' )
 		);
 
@@ -67,18 +67,18 @@ class Wellington_Pro_Settings_Page {
 
 		<div class="wrap pro-version-wrap">
 
-			<h1><?php echo WELLINGTON_PRO_NAME; ?> <?php echo WELLINGTON_PRO_VERSION; ?></h1>
+			<h1><?php echo TREVILLE_PRO_NAME; ?> <?php echo TREVILLE_PRO_VERSION; ?></h1>
 
-			<div id="wellington-pro-settings" class="wellington-pro-settings-wrap">
+			<div id="treville-pro-settings" class="treville-pro-settings-wrap">
 
-				<form class="wellington-pro-settings-form" method="post" action="options.php">
+				<form class="treville-pro-settings-form" method="post" action="options.php">
 					<?php
-						settings_fields( 'wellington_pro_settings' );
-						do_settings_sections( 'wellington_pro_settings' );
+						settings_fields( 'treville_pro_settings' );
+						do_settings_sections( 'treville_pro_settings' );
 					?>
 				</form>
 
-				<p><?php printf( __( 'You can find your license keys and manage your active sites on <a href="%s" target="_blank">themezee.com</a>.', 'wellington-pro' ), __( 'https://themezee.com/license-keys/', 'wellington-pro' ) . '?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=wellington-pro&utm_content=license-keys' ); ?></p>
+				<p><?php printf( __( 'You can find your license keys and manage your active sites on <a href="%s" target="_blank">themezee.com</a>.', 'treville-pro' ), __( 'https://themezee.com/license-keys/', 'treville-pro' ) . '?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=treville-pro&utm_content=license-keys' ); ?></p>
 
 			</div>
 
@@ -97,15 +97,15 @@ class Wellington_Pro_Settings_Page {
 	static function settings_page_css( $hook ) {
 
 		// Load styles and scripts only on theme info page.
-		if ( 'appearance_page_wellington-pro' != $hook ) {
+		if ( 'appearance_page_treville-pro' != $hook ) {
 			return;
 		}
 
 		// Embed theme info css style.
-		wp_enqueue_style( 'wellington-pro-settings-css', plugins_url( '/assets/css/settings.css', dirname( dirname( __FILE__ ) ) ), array(), WELLINGTON_PRO_VERSION );
+		wp_enqueue_style( 'treville-pro-settings-css', plugins_url( '/assets/css/settings.css', dirname( dirname( __FILE__ ) ) ), array(), TREVILLE_PRO_VERSION );
 
 	}
 }
 
-// Run Wellington Pro Settings Page Class.
-Wellington_Pro_Settings_Page::setup();
+// Run Treville Pro Settings Page Class.
+Treville_Pro_Settings_Page::setup();

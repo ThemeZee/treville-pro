@@ -5,7 +5,7 @@
  * Displays credit link and footer text based on theme options
  * Registers and displays footer navigation
  *
- * @package Wellington Pro
+ * @package Treville Pro
  */
 
 // Exit if accessed directly.
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Footer Line Class
  */
-class Wellington_Pro_Footer_Line {
+class Treville_Pro_Footer_Line {
 
 	/**
 	 * Footer Line Setup
@@ -23,17 +23,17 @@ class Wellington_Pro_Footer_Line {
 	 */
 	static function setup() {
 
-		// Return early if Wellington Theme is not active.
-		if ( ! current_theme_supports( 'wellington-pro' ) ) {
+		// Return early if Treville Theme is not active.
+		if ( ! current_theme_supports( 'treville-pro' ) ) {
 			return;
 		}
 
 		// Remove default footer text function and replace it with new one.
-		remove_action( 'wellington_footer_text', 'wellington_footer_text' );
-		add_action( 'wellington_footer_text', array( __CLASS__, 'footer_text' ) );
+		remove_action( 'treville_footer_text', 'treville_footer_text' );
+		add_action( 'treville_footer_text', array( __CLASS__, 'footer_text' ) );
 
 		// Display footer navigation.
-		add_action( 'wellington_footer_menu', array( __CLASS__, 'display_footer_menu' ) );
+		add_action( 'treville_footer_menu', array( __CLASS__, 'display_footer_menu' ) );
 
 		// Add Footer Settings in Customizer.
 		add_action( 'customize_register', array( __CLASS__, 'footer_settings' ) );
@@ -47,7 +47,7 @@ class Wellington_Pro_Footer_Line {
 	static function footer_text() {
 
 		// Get Theme Options from Database.
-		$theme_options = Wellington_Pro_Customizer::get_theme_options();
+		$theme_options = Treville_Pro_Customizer::get_theme_options();
 
 		// Display Footer Text.
 		if ( '' !== $theme_options['footer_text'] ) :
@@ -59,9 +59,9 @@ class Wellington_Pro_Footer_Line {
 		// Call Credit Link function of theme if credit link is activated.
 		if ( true === $theme_options['credit_link'] ) :
 
-			if ( function_exists( 'wellington_footer_text' ) ) :
+			if ( function_exists( 'treville_footer_text' ) ) :
 
-				wellington_footer_text();
+				treville_footer_text();
 
 			endif;
 
@@ -103,42 +103,42 @@ class Wellington_Pro_Footer_Line {
 	static function footer_settings( $wp_customize ) {
 
 		// Add Sections for Footer Settings.
-		$wp_customize->add_section( 'wellington_pro_section_footer', array(
-			'title'    => __( 'Footer Settings', 'wellington-pro' ),
+		$wp_customize->add_section( 'treville_pro_section_footer', array(
+			'title'    => __( 'Footer Settings', 'treville-pro' ),
 			'priority' => 90,
-			'panel' => 'wellington_options_panel',
+			'panel' => 'treville_options_panel',
 			)
 		);
 
 		// Add Footer Text setting.
-		$wp_customize->add_setting( 'wellington_theme_options[footer_text]', array(
+		$wp_customize->add_setting( 'treville_theme_options[footer_text]', array(
 			'default'           => '',
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => array( __CLASS__, 'sanitize_footer_text' ),
 			)
 		);
-		$wp_customize->add_control( 'wellington_theme_options[footer_text]', array(
-			'label'    => __( 'Footer Text', 'wellington-pro' ),
-			'section'  => 'wellington_pro_section_footer',
-			'settings' => 'wellington_theme_options[footer_text]',
+		$wp_customize->add_control( 'treville_theme_options[footer_text]', array(
+			'label'    => __( 'Footer Text', 'treville-pro' ),
+			'section'  => 'treville_pro_section_footer',
+			'settings' => 'treville_theme_options[footer_text]',
 			'type'     => 'textarea',
 			'priority' => 10,
 			)
 		);
 
 		// Add Credit Link setting.
-		$wp_customize->add_setting( 'wellington_theme_options[credit_link]', array(
+		$wp_customize->add_setting( 'treville_theme_options[credit_link]', array(
 			'default'           => true,
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
-			'sanitize_callback' => 'wellington_sanitize_checkbox',
+			'sanitize_callback' => 'treville_sanitize_checkbox',
 			)
 		);
-		$wp_customize->add_control( 'wellington_theme_options[credit_link]', array(
-			'label'    => __( 'Display Credit Link to ThemeZee on footer line', 'wellington-pro' ),
-			'section'  => 'wellington_pro_section_footer',
-			'settings' => 'wellington_theme_options[credit_link]',
+		$wp_customize->add_control( 'treville_theme_options[credit_link]', array(
+			'label'    => __( 'Display Credit Link to ThemeZee on footer line', 'treville-pro' ),
+			'section'  => 'treville_pro_section_footer',
+			'settings' => 'treville_theme_options[credit_link]',
 			'type'     => 'checkbox',
 			'priority' => 20,
 			)
@@ -167,17 +167,17 @@ class Wellington_Pro_Footer_Line {
 	 */
 	static function register_footer_menu() {
 
-		// Return early if Wellington Theme is not active.
-		if ( ! current_theme_supports( 'wellington-pro' ) ) {
+		// Return early if Treville Theme is not active.
+		if ( ! current_theme_supports( 'treville-pro' ) ) {
 			return;
 		}
 
-		register_nav_menu( 'footer', esc_html__( 'Footer Navigation', 'wellington-pro' ) );
+		register_nav_menu( 'footer', esc_html__( 'Footer Navigation', 'treville-pro' ) );
 	}
 }
 
 // Run Class.
-add_action( 'init', array( 'Wellington_Pro_Footer_Line', 'setup' ) );
+add_action( 'init', array( 'Treville_Pro_Footer_Line', 'setup' ) );
 
 // Register footer navigation in backend.
-add_action( 'after_setup_theme', array( 'Wellington_Pro_Footer_Line', 'register_footer_menu' ), 30 );
+add_action( 'after_setup_theme', array( 'Treville_Pro_Footer_Line', 'register_footer_menu' ), 30 );

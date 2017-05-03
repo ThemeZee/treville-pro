@@ -1,5 +1,5 @@
 ===================================
-Wellington Pro Changelog
+Treville Pro Changelog
 ===================================
 
 Version 1.0
