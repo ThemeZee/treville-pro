@@ -6,8 +6,8 @@
  * @package Treville Pro
  */
 
-#customize-control-treville_theme_options-logo_spacing {
-	margin-top: 16px;
+#customize-control-treville_theme_options-header_search_title {
+	margin-bottom: 0;
 }
 
 #customize-control-treville_theme_options-footer_text textarea {

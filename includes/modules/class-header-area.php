@@ -1,8 +1,8 @@
 <?php
 /**
- * Footer Widgets
+ * Header Area Class
  *
- * Registers footer widget areas and hooks into the Treville theme to display widgets
+ * Displays Social Icons and Search Form in Header.
  *
  * @package Treville Pro
  */
@@ -11,12 +11,12 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /**
- * Header Bar Class
+ * Header Area Class
  */
 class Treville_Pro_Header_Area {
 
 	/**
-	 * Footer Widgets Setup
+	 * Header Area Setup
 	 *
 	 * @return void
 	 */
@@ -30,6 +30,11 @@ class Treville_Pro_Header_Area {
 		// Display Social Icons.
 		add_action( 'treville_header_area', array( __CLASS__, 'display_social_icons' ) );
 
+		// Display Header Search.
+		add_action( 'treville_header_search', array( __CLASS__, 'display_header_search' ) );
+
+		// Add Header Settings in Customizer.
+		add_action( 'customize_register', array( __CLASS__, 'header_settings' ) );
 	}
 
 	/**
@@ -60,6 +65,64 @@ class Treville_Pro_Header_Area {
 			echo '</div>';
 
 		}
+	}
+
+	/**
+	 * Displays header search in main navigation menu.
+	 *
+	 * @return void
+	 */
+	static function display_header_search() {
+
+		// Get Theme Options from Database.
+		$theme_options = Treville_Pro_Customizer::get_theme_options();
+
+		// Check if header search is enabled in settings.
+		if ( true === $theme_options['header_search'] ) :
+
+			echo '<div class="header-search">';
+
+			get_search_form();
+
+			echo '</div>';
+
+		endif;
+
+	}
+
+	/**
+	 * Add header settings
+	 *
+	 * @param object $wp_customize / Customizer Object.
+	 */
+	static function header_settings( $wp_customize ) {
+
+		// Add Header Search Title.
+		$wp_customize->add_control( new Treville_Customize_Header_Control(
+			$wp_customize, 'treville_theme_options[header_search_title]', array(
+			'label' => esc_html__( 'Header Search', 'treville-pro' ),
+			'section' => 'treville_section_general',
+			'settings' => array(),
+			'priority' => 20,
+			)
+		) );
+
+		// Add Header Search setting.
+		$wp_customize->add_setting( 'treville_theme_options[header_search]', array(
+			'default'           => true,
+			'type'           	=> 'option',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'treville_sanitize_checkbox',
+			)
+		);
+		$wp_customize->add_control( 'treville_theme_options[header_search]', array(
+			'label'    => __( 'Display search field in header area', 'treville-pro' ),
+			'section'  => 'treville_section_general',
+			'settings' => 'treville_theme_options[header_search]',
+			'type'     => 'checkbox',
+			'priority' => 21,
+			)
+		);
 	}
 
 	/**
