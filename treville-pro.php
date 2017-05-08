@@ -118,9 +118,9 @@ class Treville_Pro {
 		// Include Magazine Widgets.
 		require_once TREVILLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-horizontal-box.php';
 		require_once TREVILLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-vertical-box.php';
-		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-posts-list.php';
-		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-posts-sidebar.php';
-		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-posts-single.php';
+		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-list.php';
+		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-sidebar.php';
+		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-single.php';
 
 	}
 
@@ -193,9 +193,9 @@ class Treville_Pro {
 
 		register_widget( 'Treville_Pro_Magazine_Horizontal_Box_Widget' );
 		register_widget( 'Treville_Pro_Magazine_Vertical_Box_Widget' );
-		register_widget( 'Treville_Pro_Magazine_Posts_List_Widget' );
-		register_widget( 'Treville_Pro_Magazine_Posts_Sidebar_Widget' );
-		register_widget( 'Treville_Pro_Magazine_Posts_Single_Widget' );
+		register_widget( 'Treville_Pro_Magazine_List_Widget' );
+		register_widget( 'Treville_Pro_Magazine_Sidebar_Widget' );
+		register_widget( 'Treville_Pro_Magazine_Single_Widget' );
 
 	}
 

@@ -1,9 +1,9 @@
 <?php
 /**
- * Magazine List Widget
+ * Magazine Sidebar Widget
  *
- * Display the latest posts from a selected category in a list layout.
- * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
+ * Display the latest posts from a selected category.
+ * Intented to be used in one of the sidebar widget areas.
  *
  * @package Treville Pro
  */
@@ -11,7 +11,7 @@
 /**
  * Magazine Widget Class
  */
-class Treville_Pro_Magazine_Posts_List_Widget extends WP_Widget {
+class Treville_Pro_Magazine_Sidebar_Widget extends WP_Widget {
 
 	/**
 	 * Widget Constructor
@@ -20,11 +20,11 @@ class Treville_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 
 		// Setup Widget.
 		parent::__construct(
-			'treville-magazine-posts-list', // ID.
-			esc_html__( 'Magazine (List)', 'treville-pro' ), // Name.
+			'treville-magazine-sidebar', // ID.
+			esc_html__( 'Magazine (Sidebar)', 'treville-pro' ), // Name.
 			array(
-				'classname' => 'treville-magazine-list-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category in a simple list layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'treville-pro' ),
+				'classname' => 'treville-magazine-sidebar-widget',
+				'description' => esc_html__( 'Displays your posts from a selected category. You can use this widget in the Main Sidebar widget area.', 'treville-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -36,9 +36,9 @@ class Treville_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'title'    => '',
-			'category' => 0,
-			'number'   => 3,
+			'title'				=> '',
+			'category'			=> 0,
+			'number'			=> 4,
 		);
 
 		return $defaults;
@@ -54,14 +54,6 @@ class Treville_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 	 */
 	function widget( $args, $instance ) {
 
-		// Show message to admins if Theme is not updated.
-		if ( ! function_exists( 'treville_get_magazine_post_ids' ) ) {
-			if ( current_user_can( 'edit_theme_options' ) ) {
-				echo '<p>INFO: Magazine Widget is missing theme functions and can not be displayed. Please update the theme to the latest version. This message is only shown to admins.</p>';
-			}
-			return;
-		}
-
 		// Start Output Buffering.
 		ob_start();
 
@@ -72,12 +64,12 @@ class Treville_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 		echo $args['before_widget'];
 		?>
 
-		<div class="widget-magazine-posts-list widget-magazine-posts clearfix">
+		<div class="widget-magazine-sidebar widget-magazine-posts clearfix">
 
 			<?php // Display Title.
 			$this->widget_title( $args, $settings ); ?>
 
-			<div class="widget-magazine-posts-content">
+			<div class="widget-magazine-content magazine-sidebar clearfix">
 
 				<?php $this->render( $settings ); ?>
 
@@ -95,9 +87,9 @@ class Treville_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 	/**
 	 * Renders the Widget Content
 	 *
-	 * Switches between horizontal and vertical layout style based on widget settings
+	 * Switches between two or three column layout style based on widget settings
 	 *
-	 * @uses this->magazine_posts_horizontal() or this->magazine_posts_vertical()
+	 * @uses this->magazine_posts_two_column_sidebar() or this->magazine_posts_three_column_sidebar()
 	 * @used-by this->widget()
 	 *
 	 * @param array $settings / Settings for this widget instance.
@@ -121,7 +113,7 @@ class Treville_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 			// Display Posts.
 			while ( $posts_query->have_posts() ) : $posts_query->the_post();
 
-				get_template_part( 'template-parts/widgets/magazine-full-post', 'list' );
+				get_template_part( 'template-parts/widgets/magazine-large-post', 'sidebar' );
 
 			endwhile;
 
@@ -193,12 +185,12 @@ class Treville_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php esc_html_e( 'Category:', 'treville-pro' ); ?></label><br/>
 			<?php // Display Category Select.
 				$args = array(
-					'show_option_all'    => esc_html__( 'All Categories', 'treville-pro' ),
-					'show_count' 		 => true,
-					'hide_empty'		 => false,
-					'selected'           => $settings['category'],
-					'name'               => $this->get_field_name( 'category' ),
-					'id'                 => $this->get_field_id( 'category' ),
+					'show_option_all' => esc_html__( 'All Categories', 'treville-pro' ),
+					'show_count' 		  => true,
+					'hide_empty'		  => false,
+					'selected'        => $settings['category'],
+					'name'            => $this->get_field_name( 'category' ),
+					'id'              => $this->get_field_id( 'category' ),
 				);
 				wp_dropdown_categories( $args );
 			?>
@@ -206,7 +198,7 @@ class Treville_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php esc_html_e( 'Number of posts:', 'treville-pro' ); ?>
-				<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo absint( $settings['number'] ); ?>" size="3" />
+				<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo (int) $settings['number']; ?>" size="3" />
 			</label>
 		</p>
 

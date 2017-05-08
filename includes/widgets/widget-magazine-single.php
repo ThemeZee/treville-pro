@@ -1,9 +1,9 @@
 <?php
 /**
- * Magazine Sidebar Widget
+ * Magazine Single Widget
  *
- * Display the latest posts from a selected category.
- * Intented to be used in one of the sidebar widget areas.
+ * Displays a single post from a selected category.
+ * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
  *
  * @package Treville Pro
  */
@@ -11,7 +11,7 @@
 /**
  * Magazine Widget Class
  */
-class Treville_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
+class Treville_Pro_Magazine_Single_Widget extends WP_Widget {
 
 	/**
 	 * Widget Constructor
@@ -20,11 +20,11 @@ class Treville_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 
 		// Setup Widget.
 		parent::__construct(
-			'treville-magazine-posts-sidebar', // ID.
-			esc_html__( 'Magazine (Sidebar)', 'treville-pro' ), // Name.
+			'treville-magazine-single', // ID.
+			esc_html__( 'Magazine (Single Post)', 'treville-pro' ), // Name.
 			array(
-				'classname' => 'treville-magazine-sidebar-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category. You can use this widget in the Main Sidebar widget area.', 'treville-pro' ),
+				'classname' => 'treville-magazine-single-widget',
+				'description' => esc_html__( 'Displays a single post from a selected category. Please use this widget ONLY in the Magazine Homepage widget area.', 'treville-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -36,10 +36,8 @@ class Treville_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'title'				=> '',
-			'category'			=> 0,
-			'number'			=> 4,
-			'excerpt'			=> false,
+			'title'	   => '',
+			'category' => 0,
 		);
 
 		return $defaults;
@@ -55,14 +53,6 @@ class Treville_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 	 */
 	function widget( $args, $instance ) {
 
-		// Show message to admins if Theme is not updated.
-		if ( ! function_exists( 'treville_get_magazine_post_ids' ) ) {
-			if ( current_user_can( 'edit_theme_options' ) ) {
-				echo '<p>INFO: Magazine Widget is missing theme functions and can not be displayed. Please update the theme to the latest version. This message is only shown to admins.</p>';
-			}
-			return;
-		}
-
 		// Start Output Buffering.
 		ob_start();
 
@@ -73,12 +63,12 @@ class Treville_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 		echo $args['before_widget'];
 		?>
 
-		<div class="widget-magazine-posts-sidebar widget-magazine-posts clearfix">
+		<div class="widget-magazine-single widget-magazine-posts clearfix">
 
 			<?php // Display Title.
 			$this->widget_title( $args, $settings ); ?>
 
-			<div class="widget-magazine-posts-content">
+			<div class="widget-magazine-content magazine-single clearfix">
 
 				<?php $this->render( $settings ); ?>
 
@@ -96,22 +86,22 @@ class Treville_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 	/**
 	 * Renders the Widget Content
 	 *
-	 * Switches between two or three column layout style based on widget settings
+	 * Switches between horizontal and vertical layout style based on widget settings
 	 *
-	 * @uses this->magazine_posts_two_column_sidebar() or this->magazine_posts_three_column_sidebar()
+	 * @uses this->magazine_posts_horizontal() or this->magazine_posts_vertical()
 	 * @used-by this->widget()
 	 *
 	 * @param array $settings / Settings for this widget instance.
 	 */
 	function render( $settings ) {
 
-		// Get cached post ids.
-		$post_ids = treville_get_magazine_post_ids( $this->id, $settings['category'], $settings['number'] );
+		// Get cached post id.
+		$post_id = treville_get_magazine_post_ids( $this->id, $settings['category'], 1 );
 
 		// Fetch posts from database.
 		$query_arguments = array(
-			'post__in'       => $post_ids,
-			'posts_per_page' => absint( $settings['number'] ),
+			'post__in'       => $post_id,
+			'posts_per_page' => 1,
 			'no_found_rows'  => true,
 		);
 		$posts_query = new WP_Query( $query_arguments );
@@ -119,21 +109,12 @@ class Treville_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 		// Check if there are posts.
 		if ( $posts_query->have_posts() ) :
 
-			// Limit the number of words for the excerpt.
-			add_filter( 'excerpt_length', 'treville_magazine_posts_excerpt_length' );
-
-			// Pass Excerpt Setting to template file.
-			set_query_var( 'treville_post_excerpt', (bool) $settings['excerpt'] );
-
 			// Display Posts.
 			while ( $posts_query->have_posts() ) : $posts_query->the_post();
 
-				get_template_part( 'template-parts/widgets/magazine-large-post', 'sidebar' );
+				get_template_part( 'template-parts/widgets/magazine-full-post', 'single' );
 
 			endwhile;
-
-			// Remove excerpt filter.
-			remove_filter( 'excerpt_length', 'treville_magazine_posts_excerpt_length' );
 
 		endif;
 
@@ -175,8 +156,6 @@ class Treville_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = sanitize_text_field( $new_instance['title'] );
 		$instance['category'] = (int) $new_instance['category'];
-		$instance['number'] = (int) $new_instance['number'];
-		$instance['excerpt'] = ! empty( $new_instance['excerpt'] );
 
 		treville_flush_magazine_post_ids();
 
@@ -204,28 +183,15 @@ class Treville_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php esc_html_e( 'Category:', 'treville-pro' ); ?></label><br/>
 			<?php // Display Category Select.
 				$args = array(
-					'show_option_all' => esc_html__( 'All Categories', 'treville-pro' ),
-					'show_count' 		  => true,
-					'hide_empty'		  => false,
-					'selected'        => $settings['category'],
-					'name'            => $this->get_field_name( 'category' ),
-					'id'              => $this->get_field_id( 'category' ),
+					'show_option_all'    => esc_html__( 'All Categories', 'treville-pro' ),
+					'show_count' 		 => true,
+					'hide_empty'		 => false,
+					'selected'           => $settings['category'],
+					'name'               => $this->get_field_name( 'category' ),
+					'id'                 => $this->get_field_id( 'category' ),
 				);
 				wp_dropdown_categories( $args );
 			?>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php esc_html_e( 'Number of posts:', 'treville-pro' ); ?>
-				<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo (int) $settings['number']; ?>" size="3" />
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'excerpt' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['excerpt'] ); ?> id="<?php echo $this->get_field_id( 'excerpt' ); ?>" name="<?php echo $this->get_field_name( 'excerpt' ); ?>" />
-				<?php esc_html_e( 'Display post excerpt', 'treville-pro' ); ?>
-			</label>
 		</p>
 
 		<?php

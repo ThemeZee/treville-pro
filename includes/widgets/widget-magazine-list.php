@@ -1,8 +1,8 @@
 <?php
 /**
- * Magazine Single Widget
+ * Magazine List Widget
  *
- * Displays a single post from a selected category.
+ * Display the latest posts from a selected category in a list layout.
  * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
  *
  * @package Treville Pro
@@ -11,7 +11,7 @@
 /**
  * Magazine Widget Class
  */
-class Treville_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
+class Treville_Pro_Magazine_List_Widget extends WP_Widget {
 
 	/**
 	 * Widget Constructor
@@ -20,11 +20,11 @@ class Treville_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 
 		// Setup Widget.
 		parent::__construct(
-			'treville-magazine-posts-single', // ID.
-			esc_html__( 'Magazine (Single Post)', 'treville-pro' ), // Name.
+			'treville-magazine-list', // ID.
+			esc_html__( 'Magazine (List)', 'treville-pro' ), // Name.
 			array(
-				'classname' => 'treville-magazine-single-widget',
-				'description' => esc_html__( 'Displays a single post from a selected category. Please use this widget ONLY in the Magazine Homepage widget area.', 'treville-pro' ),
+				'classname' => 'treville-magazine-list-widget',
+				'description' => esc_html__( 'Displays your posts from a selected category in a list layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'treville-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -36,8 +36,9 @@ class Treville_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'title'	   => '',
+			'title'    => '',
 			'category' => 0,
+			'number'   => 3,
 		);
 
 		return $defaults;
@@ -53,14 +54,6 @@ class Treville_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 	 */
 	function widget( $args, $instance ) {
 
-		// Show message to admins if Theme is not updated.
-		if ( ! function_exists( 'treville_get_magazine_post_ids' ) ) {
-			if ( current_user_can( 'edit_theme_options' ) ) {
-				echo '<p>INFO: Magazine Widget is missing theme functions and can not be displayed. Please update the theme to the latest version. This message is only shown to admins.</p>';
-			}
-			return;
-		}
-
 		// Start Output Buffering.
 		ob_start();
 
@@ -71,12 +64,12 @@ class Treville_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		echo $args['before_widget'];
 		?>
 
-		<div class="widget-magazine-posts-single widget-magazine-posts clearfix">
+		<div class="widget-magazine-list widget-magazine-posts clearfix">
 
 			<?php // Display Title.
 			$this->widget_title( $args, $settings ); ?>
 
-			<div class="widget-magazine-posts-content">
+			<div class="widget-magazine-content magazine-list clearfix">
 
 				<?php $this->render( $settings ); ?>
 
@@ -103,13 +96,13 @@ class Treville_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 	 */
 	function render( $settings ) {
 
-		// Get cached post id.
-		$post_id = treville_get_magazine_post_ids( $this->id, $settings['category'], 1 );
+		// Get cached post ids.
+		$post_ids = treville_get_magazine_post_ids( $this->id, $settings['category'], $settings['number'] );
 
 		// Fetch posts from database.
 		$query_arguments = array(
-			'post__in'       => $post_id,
-			'posts_per_page' => 1,
+			'post__in'       => $post_ids,
+			'posts_per_page' => absint( $settings['number'] ),
 			'no_found_rows'  => true,
 		);
 		$posts_query = new WP_Query( $query_arguments );
@@ -120,7 +113,7 @@ class Treville_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 			// Display Posts.
 			while ( $posts_query->have_posts() ) : $posts_query->the_post();
 
-				get_template_part( 'template-parts/widgets/magazine-full-post', 'single' );
+				get_template_part( 'template-parts/widgets/magazine-large-post', 'list' );
 
 			endwhile;
 
@@ -164,6 +157,7 @@ class Treville_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = sanitize_text_field( $new_instance['title'] );
 		$instance['category'] = (int) $new_instance['category'];
+		$instance['number'] = (int) $new_instance['number'];
 
 		treville_flush_magazine_post_ids();
 
@@ -200,6 +194,12 @@ class Treville_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 				);
 				wp_dropdown_categories( $args );
 			?>
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php esc_html_e( 'Number of posts:', 'treville-pro' ); ?>
+				<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo absint( $settings['number'] ); ?>" size="3" />
+			</label>
 		</p>
 
 		<?php
