@@ -1,8 +1,8 @@
 <?php
 /**
- * Magazine Horizontal Box Widget
+ * Magazine Vertical Box Widget
  *
- * Display the latest posts from a selected category in a horizontal box.
+ * Display the latest posts from a selected category in a vertical box.
  * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
  *
  * @package Treville Pro
@@ -11,7 +11,7 @@
 /**
  * Magazine Widget Class
  */
-class Treville_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
+class Treville_Pro_Magazine_Vertical_Box_Widget extends WP_Widget {
 
 	/**
 	 * Widget Constructor
@@ -20,11 +20,11 @@ class Treville_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 
 		// Setup Widget.
 		parent::__construct(
-			'treville-magazine-posts-boxed', // ID.
-			esc_html__( 'Magazine (Horizontal Box)', 'treville-pro' ), // Name.
+			'treville-magazine-vertical-box', // ID.
+			esc_html__( 'Magazine (Vertical Box)', 'treville-pro' ), // Name.
 			array(
-				'classname' => 'treville-magazine-horizontal-box-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category in a horizontal box. Please use this widget ONLY in the Magazine Homepage widget area.', 'treville-pro' ),
+				'classname' => 'treville-magazine-vertical-box-widget',
+				'description' => esc_html__( 'Displays your posts from a selected category in a vertical box. Please use this widget ONLY in the Magazine Homepage widget area.', 'treville-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -53,14 +53,6 @@ class Treville_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 	 */
 	function widget( $args, $instance ) {
 
-		// Show message to admins if Theme is not updated.
-		if ( ! function_exists( 'treville_get_magazine_post_ids' ) ) {
-			if ( current_user_can( 'edit_theme_options' ) ) {
-				echo '<p>INFO: Magazine Widget is missing theme functions and can not be displayed. Please update the theme to the latest version. This message is only shown to admins.</p>';
-			}
-			return;
-		}
-
 		// Start Output Buffering.
 		ob_start();
 
@@ -70,13 +62,12 @@ class Treville_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 		// Output.
 		echo $args['before_widget'];
 		?>
-
-		<div class="widget-magazine-posts-horizontal-box widget-magazine-posts clearfix">
+		<div class="widget-magazine-vertical-box widget-magazine-posts clearfix">
 
 			<?php // Display Title.
 			$this->widget_title( $args, $settings ); ?>
 
-			<div class="widget-magazine-posts-content magazine-horizontal-box clearfix">
+			<div class="widget-magazine-content magazine-vertical-box clearfix">
 
 				<?php $this->render( $settings ); ?>
 
@@ -94,9 +85,6 @@ class Treville_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 	/**
 	 * Renders the Widget Content
 	 *
-	 * Switches between horizontal and vertical layout style based on widget settings
-	 *
-	 * @uses this->magazine_posts_horizontal() or this->magazine_posts_vertical()
 	 * @used-by this->widget()
 	 *
 	 * @param array $settings / Settings for this widget instance.
@@ -117,33 +105,27 @@ class Treville_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 		// Check if there are posts.
 		if ( $posts_query->have_posts() ) :
 
-			// Limit the number of words for the excerpt.
-			add_filter( 'excerpt_length', 'treville_magazine_posts_excerpt_length' );
-
 			// Display Posts.
-			while ( $posts_query->have_posts() ) :
-
-				$posts_query->the_post();
+			while ( $posts_query->have_posts() ) : $posts_query->the_post();
 
 				// Display first post differently.
 				if ( 0 === $posts_query->current_post ) :
 
-					get_template_part( 'template-parts/widgets/magazine-large-post', 'horizontal-box' );
+					echo '<div class="left-post">';
+					get_template_part( 'template-parts/widgets/magazine-large-post', 'vertical-box' );
+					echo '</div>';
 
-					echo '<div class="medium-posts clearfix">';
+					echo '<div class="small-posts clearfix">';
 
 				else :
 
-					get_template_part( 'template-parts/widgets/magazine-medium-post', 'horizontal-box' );
+					get_template_part( 'template-parts/widgets/magazine-small-post', 'vertical-box' );
 
 				endif;
 
 			endwhile;
 
-			echo '</div><!-- end .medium-posts -->';
-
-			// Remove excerpt filter.
-			remove_filter( 'excerpt_length', 'treville_magazine_posts_excerpt_length' );
+			echo '</div><!-- end .small-posts -->';
 
 		endif;
 

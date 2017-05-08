@@ -116,8 +116,8 @@ class Treville_Pro {
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/modules/class-header-area.php';
 
 		// Include Magazine Widgets.
-		require_once TREVILLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-horizontal-box.php';
-		require_once TREVILLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-vertical-box.php';
+		require_once TREVILLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-horizontal-box.php';
+		require_once TREVILLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-vertical-box.php';
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-posts-list.php';
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-posts-sidebar.php';
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-posts-single.php';
