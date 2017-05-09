@@ -80,7 +80,8 @@ class Treville_Pro_Custom_Fonts {
 				/* Headings Font Setting */
 				.site-title,
 				.page-title,
-				.entry-title {
+				.entry-title,
+				.entry-meta {
 					font-family: "' . esc_attr( $theme_options['title_font'] ) . '";
 				}
 				';
@@ -106,9 +107,9 @@ class Treville_Pro_Custom_Fonts {
 			$custom_css .= '
 				/* Widget Titles Font Setting */
 				.widget-title,
-				.archive-title,
+				.page-header .archive-title,
 				.comments-header .comments-title,
-				.comment-reply-title span {
+				.comment-reply-title {
 					font-family: "' . esc_attr( $theme_options['widget_title_font'] ) . '";
 				}
 				';

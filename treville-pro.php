@@ -110,7 +110,7 @@ class Treville_Pro {
 
 		// Include Pro Features.
 		#require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/modules/class-custom-colors.php';
-		#require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/modules/class-custom-fonts.php';
+		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/modules/class-custom-fonts.php';
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/modules/class-footer-line.php';
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/modules/class-footer-widgets.php';
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/modules/class-header-area.php';

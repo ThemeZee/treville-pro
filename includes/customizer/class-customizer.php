@@ -71,7 +71,7 @@ class Treville_Pro_Customizer {
 			'footer_color'         => '#303030',
 			'text_font'            => 'Gudea',
 			'title_font'           => 'Magra',
-			'navi_font'            => 'Gudea',
+			'navi_font'            => 'Magra',
 			'widget_title_font'    => 'Magra',
 			'available_fonts'      => 'favorites',
 		);
