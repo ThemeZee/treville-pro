@@ -55,14 +55,19 @@ class Treville_Pro_Custom_Colors {
 			$custom_css .= '
 				/* Link and Button Color Setting */
 				a:link,
-				a:visited {
+				a:visited,
+				.post-slider-controls .zeeflex-direction-nav a:hover {
 					color: ' . $theme_options['link_color'] . ';
 				}
 
 				a:hover,
 				a:focus,
 				a:active {
-					color: #303030;
+					color: #454545;
+				}
+
+				blockquote {
+					border-color: ' . $theme_options['link_color'] . ';
 				}
 
 				button,
@@ -78,7 +83,7 @@ class Treville_Pro_Custom_Colors {
 				.pagination a:hover,
 				.pagination a:active,
 				.pagination .current,
-				.infinite-scroll #infinite-handle span:hover,
+				.infinite-scroll #infinite-handle span,
 				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
@@ -102,59 +107,62 @@ class Treville_Pro_Custom_Colors {
 				input[type="submit"]:active,
 				.more-link:hover,
 				.more-link:active,
+				.infinite-scroll #infinite-handle span:hover,
 				.tzwb-social-icons .social-icons-menu li a:active,
 				.tzwb-social-icons .social-icons-menu li a:hover {
-					background: #303030;
+					background: #454545;
 				}
 			';
 		}
 
-		// Set Top Navigation Color.
-		if ( $theme_options['top_navi_color'] !== $default_options['top_navi_color'] ) {
+		// Set Header Color.
+		if ( $theme_options['header_color'] !== $default_options['header_color'] ) {
 
 			$custom_css .= '
-				/* Top Navigation Color Setting */
-				.header-bar-wrap,
+				/* Header Color Setting */
+				.site-header,
 				.top-navigation-menu ul {
-					background: ' . $theme_options['top_navi_color'] . ';
+					background: ' . $theme_options['header_color'] . ';
 				}
 			';
 
-			// Check if a dark background color was chosen.
-			if ( self::is_color_dark( $theme_options['top_navi_color'] ) ) {
+			// Check if a light background color was chosen.
+			if ( self::is_color_light( $theme_options['header_color'] ) ) {
 				$custom_css .= '
-					.header-bar-wrap,
+					.site-description,
 					.top-navigation-menu,
 					.top-navigation-menu a,
 					.top-navigation-menu ul,
-					.top-navigation-menu ul a,
-					.top-navigation-menu ul li:last-child a {
-						border-color: rgba(255,255,255,0.1);
+					.top-navigation-menu ul a {
+						border-color: rgba(0,0,0,0.2);
 					}
 
+					.site-title,
+					.site-title a:link,
+					.site-title a:visited,
+					.site-description,
 					.top-navigation-menu a:link,
 					.top-navigation-menu a:visited,
 					.top-navigation-toggle,
 					.top-navigation-toggle:focus,
 					.top-navigation-menu .submenu-dropdown-toggle,
-					.header-bar .social-icons-menu li a:link,
-					.header-bar .social-icons-menu li a:visited {
-					    color: #ffffff;
+					.header-area .social-icons-menu li a:link,
+					.header-area .social-icons-menu li a:visited {
+					    color: #454545;
 					}
 
+					.site-title a:hover,
+					.site-title a:active,
 					.top-navigation-menu a:hover,
 					.top-navigation-menu a:active,
 					.top-navigation-toggle:hover,
+					.top-navigation-toggle:focus,
 					.top-navigation-toggle:active,
 					.top-navigation-menu .submenu-dropdown-toggle:hover,
 					.top-navigation-menu .submenu-dropdown-toggle:active,
-					.header-bar .social-icons-menu li a:hover,
-					.header-bar .social-icons-menu li a:active {
-						color: rgba(255,255,255,0.5);
-					}
-
-					.top-navigation-menu li.current-menu-item > a {
-						background: rgba(255,255,255,0.075);
+					.header-area .social-icons-menu li a:hover,
+					.header-area .social-icons-menu li a:active {
+						color: rgba(0,0,0,0.5);
 					}
 				';
 			}
@@ -165,42 +173,44 @@ class Treville_Pro_Custom_Colors {
 
 			$custom_css .= '
 				/* Main Navigation Color Setting */
-				.primary-navigation-wrap,
-				.main-navigation-menu ul {
+				.main-navigation-wrap,
+				.main-navigation-menu,
+				.main-navigation-menu ul,
+				.header-search .search-form .search-field,
+				.header-search .search-form .search-submit {
 					background: ' . $theme_options['navi_color'] . ';
 				}
 			';
 
 			// Check if a light background color was chosen.
-			if ( self::is_color_light( $theme_options['navi_color'] ) ) {
+			if ( self::is_color_dark( $theme_options['navi_color'] ) ) {
 				$custom_css .= '
+					.main-navigation-wrap,
 					.main-navigation-menu,
 					.main-navigation-menu a,
 					.main-navigation-menu ul,
 					.main-navigation-menu ul a,
-					.main-navigation-menu ul li:last-child a {
-						border-color: rgba(0,0,0,0.15);
+					.main-navigation-menu ul li:last-child > a,
+					.header-search .search-form .search-field {
+						border-color: rgba(255,255,255,0.1);
 					}
 
 					.main-navigation-menu a:link,
 					.main-navigation-menu a:visited,
-					.main-navigation-toggle,
-					.main-navigation-toggle:focus,
-					.main-navigation-menu .submenu-dropdown-toggle {
-					    color: #111111;
+					.main-navigation-menu .submenu-dropdown-toggle,
+					.header-search .search-form .search-field:focus,
+					.header-search .search-form .search-submit .genericon-search {
+					    color: #ffffff;
 					}
 
 					.main-navigation-menu a:hover,
 					.main-navigation-menu a:active,
-					.main-navigation-toggle:hover,
-					.main-navigation-toggle:active,
 					.main-navigation-menu .submenu-dropdown-toggle:hover,
-					.main-navigation-menu .submenu-dropdown-toggle:active {
-						color: rgba(0,0,0,0.5);
-					}
-
-					.main-navigation-menu li.current-menu-item > a {
-						background: rgba(0,0,0,0.05);
+					.main-navigation-menu .submenu-dropdown-toggle:active,
+					.header-search .search-form .search-field,
+					.header-search .search-form .search-submit:hover .genericon-search,
+					.header-search .search-form .search-submit:active .genericon-search {
+						color: rgba(255,255,255,0.5);
 					}
 				';
 			}
@@ -211,49 +221,45 @@ class Treville_Pro_Custom_Colors {
 
 			$custom_css .= '
 				/* Post Titles Primary Color Setting */
-				.site-title,
-				.site-title a:link,
-				.site-title a:visited,
 				.page-title,
 				.entry-title,
 				.entry-title a:link,
-				.entry-title a:visited,
-				.post-slider-controls .zeeflex-direction-nav a:link,
-				.post-slider-controls .zeeflex-direction-nav a:visited {
+				.entry-title a:visited {
 					color: ' . $theme_options['title_color'] . ';
 				}
 
-				.site-title a:hover,
-				.site-title a:active,
-				.widget-title a:hover,
-				.widget-title a:active,
 				.entry-title a:hover,
-				.entry-title a:active,
-				.post-slider-controls .zeeflex-direction-nav a:hover,
-				.post-slider-controls .zeeflex-direction-nav a:active {
-					color: #ee3333;
+				.entry-title a:active {
+					color: #454545;
+				}
+			';
+		}
+
+		// Set Border Color.
+		if ( $theme_options['border_color'] !== $default_options['border_color'] ) {
+
+			$custom_css .= '
+				/* Border Color Setting */
+				.widget,
+				.widget-header,
+				.widget-magazine-columns .magazine-column .magazine-column-content,
+				.type-post,
+				.type-page,
+				.type-attachment,
+				.comments-area,
+				.comment-respond,
+				.comments-header,
+				.comment-reply-title,
+				.page-header .archive-title {
+					box-shadow: inset 0 2px ' . $theme_options['border_color'] . ';
 				}
 
-				button:hover,
-				input[type="button"]:hover,
-				input[type="reset"]:hover,
-				input[type="submit"]:hover,
-				button:focus,
-				input[type="button"]:focus,
-				input[type="reset"]:focus,
-				input[type="submit"]:focus,
-				button:active,
-				input[type="button"]:active,
-				input[type="reset"]:active,
-				input[type="submit"]:active,
-				.more-link:hover,
-				.more-link:active,
-				.pagination a:link,
-				.pagination a:visited,
-				.infinite-scroll #infinite-handle span,
-				.tzwb-social-icons .social-icons-menu li a:active,
-				.tzwb-social-icons .social-icons-menu li a:hover {
-					background: ' . $theme_options['title_color'] . ';
+				.treville-magazine-columns-widget {
+					box-shadow: none;
+				}
+
+				.sticky {
+					box-shadow: inset 0 8px ' . $theme_options['border_color'] . ';
 				}
 			';
 		}
@@ -266,34 +272,15 @@ class Treville_Pro_Custom_Colors {
 				.widget-title,
 				.widget-title a:link,
 				.widget-title a:visited,
-				.archive-title,
+				.page-header .archive-title,
 				.comments-header .comments-title,
-				.comment-reply-title span {
+				.comment-reply-title {
 					color: ' . $theme_options['widget_title_color'] . ';
 				}
-			';
-		}
 
-		// Set Title Hover Color (= Link and Buttons color)
-		if ( $theme_options['link_color'] !== $default_options['link_color'] ) {
-
-			$custom_css .= '
-				/* Title Hover Color Setting */
-				.site-title a:hover,
-				.site-title a:active,
 				.widget-title a:hover,
-				.widget-title a:active,
-				.entry-title a:hover,
-				.entry-title a:active,
-				.post-slider-controls .zeeflex-direction-nav a:hover,
-				.post-slider-controls .zeeflex-direction-nav a:active {
-					color: ' . $theme_options['link_color'] . ';
-				}
-
-				.pagination a:hover,
-				.pagination a:active,
-				.infinite-scroll #infinite-handle span:hover {
-					background: ' . $theme_options['link_color'] . ';
+				.widget-title a:active {
+					color: #454545;
 				}
 			';
 		}
@@ -310,13 +297,22 @@ class Treville_Pro_Custom_Colors {
 			// Check if a dark background color was chosen.
 			if ( self::is_color_light( $theme_options['footer_widgets_color'] ) ) {
 				$custom_css .= '
+					.footer-widgets .widget {
+						border-color: rgba(0,0,0,0.05);
+					}
+
+					.footer-widgets .widget-title {
+						background: rgba(0,0,0,0.025);
+						border-bottom: 1px solid rgba(0,0,0,0.025);
+					}
+
 					.footer-widgets .widget,
 					.footer-widgets .widget-title,
 					.footer-widgets .widget-title a:link,
 					.footer-widgets .widget-title a:visited,
 					.footer-widgets .widget a:link,
 					.footer-widgets .widget a:visited  {
-						color: #111111;
+						color: #454545;
 					}
 
 					.footer-widgets .widget-title a:hover,
@@ -347,8 +343,9 @@ class Treville_Pro_Custom_Colors {
 					.site-footer .site-info a:visited,
 					.footer-navigation-menu a:link,
 					.footer-navigation-menu a:visited {
-						color: #111111;
+						color: #454545;
 					}
+					
 					.site-footer .site-info a:hover,
 					.site-footer .site-info a:active,
 					.footer-navigation-menu a:hover,
@@ -381,18 +378,18 @@ class Treville_Pro_Custom_Colors {
 		$default_options = Treville_Pro_Customizer::get_default_options();
 
 		// Add Top Navigation Color setting.
-		$wp_customize->add_setting( 'treville_theme_options[top_navi_color]', array(
-			'default'           => $default_options['top_navi_color'],
+		$wp_customize->add_setting( 'treville_theme_options[header_color]', array(
+			'default'           => $default_options['header_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'treville_theme_options[top_navi_color]', array(
-				'label'      => _x( 'Top Navigation', 'color setting', 'treville-pro' ),
+			$wp_customize, 'treville_theme_options[header_color]', array(
+				'label'      => _x( 'Header', 'color setting', 'treville-pro' ),
 				'section'    => 'treville_pro_section_colors',
-				'settings'   => 'treville_theme_options[top_navi_color]',
+				'settings'   => 'treville_theme_options[header_color]',
 				'priority' => 10,
 			)
 		) );
@@ -431,7 +428,7 @@ class Treville_Pro_Custom_Colors {
 			)
 		) );
 
-		// Add Navigation Secondary Color setting.
+		// Add Title Color setting.
 		$wp_customize->add_setting( 'treville_theme_options[title_color]', array(
 			'default'           => $default_options['title_color'],
 			'type'           	=> 'option',
@@ -448,6 +445,23 @@ class Treville_Pro_Custom_Colors {
 			)
 		) );
 
+		// Add Border Color setting.
+		$wp_customize->add_setting( 'treville_theme_options[border_color]', array(
+			'default'           => $default_options['border_color'],
+			'type'           	=> 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'treville_theme_options[border_color]', array(
+				'label'      => _x( 'Borders', 'color setting', 'treville-pro' ),
+				'section'    => 'treville_pro_section_colors',
+				'settings'   => 'treville_theme_options[border_color]',
+				'priority' => 50,
+			)
+		) );
+
 		// Add Widget Title Color setting.
 		$wp_customize->add_setting( 'treville_theme_options[widget_title_color]', array(
 			'default'           => $default_options['widget_title_color'],
@@ -461,7 +475,7 @@ class Treville_Pro_Custom_Colors {
 				'label'      => _x( 'Widget Titles', 'color setting', 'treville-pro' ),
 				'section'    => 'treville_pro_section_colors',
 				'settings'   => 'treville_theme_options[widget_title_color]',
-				'priority' => 50,
+				'priority' => 60,
 			)
 		) );
 
@@ -478,7 +492,7 @@ class Treville_Pro_Custom_Colors {
 				'label'      => _x( 'Footer Widgets', 'color setting', 'treville-pro' ),
 				'section'    => 'treville_pro_section_colors',
 				'settings'   => 'treville_theme_options[footer_widgets_color]',
-				'priority' => 60,
+				'priority' => 70,
 			)
 		) );
 
@@ -495,7 +509,7 @@ class Treville_Pro_Custom_Colors {
 				'label'      => _x( 'Footer', 'color setting', 'treville-pro' ),
 				'section'    => 'treville_pro_section_colors',
 				'settings'   => 'treville_theme_options[footer_color]',
-				'priority' => 70,
+				'priority' => 80,
 			)
 		) );
 	}
