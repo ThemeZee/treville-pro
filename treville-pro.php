@@ -65,7 +65,7 @@ class Treville_Pro {
 		define( 'TREVILLE_PRO_VERSION', '1.0' );
 
 		// Define Plugin Name.
-		define( 'TREVILLE_PRO_PRODUCT_ID', 113282 );
+		define( 'TREVILLE_PRO_PRODUCT_ID', 123051 );
 
 		// Define Update API URL.
 		define( 'TREVILLE_PRO_STORE_API_URL', 'https://themezee.com' );
