@@ -88,7 +88,10 @@ class Treville_Pro_Custom_Colors {
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
 				.tzwb-social-icons .social-icons-menu li a:link,
-				.tzwb-social-icons .social-icons-menu li a:visited {
+				.tzwb-social-icons .social-icons-menu li a:visited,
+				.scroll-to-top-button,
+				.scroll-to-top-button:focus,
+				.scroll-to-top-button:active {
 					color: #fff;
 					background: ' . $theme_options['link_color'] . ';
 				}
@@ -109,7 +112,8 @@ class Treville_Pro_Custom_Colors {
 				.more-link:active,
 				.infinite-scroll #infinite-handle span:hover,
 				.tzwb-social-icons .social-icons-menu li a:active,
-				.tzwb-social-icons .social-icons-menu li a:hover {
+				.tzwb-social-icons .social-icons-menu li a:hover,
+				.scroll-to-top-button:hover {
 					background: #454545;
 				}
 			';
@@ -345,7 +349,7 @@ class Treville_Pro_Custom_Colors {
 					.footer-navigation-menu a:visited {
 						color: #454545;
 					}
-					
+
 					.site-footer .site-info a:hover,
 					.site-footer .site-info a:active,
 					.footer-navigation-menu a:hover,
