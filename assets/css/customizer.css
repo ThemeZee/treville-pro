@@ -6,7 +6,12 @@
  * @package Treville Pro
  */
 
-#customize-control-treville_theme_options-header_search_title {
+ #customize-control-treville_theme_options-footer_text {
+ 	margin-top: 16px;
+ }
+
+#customize-control-treville_theme_options-header_search_title,
+#customize-control-treville_theme_options-scroll_top_title {
 	margin-bottom: 0;
 }
 

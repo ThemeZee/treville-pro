@@ -60,6 +60,7 @@ class Treville_Pro_Customizer {
 
 		$default_options = array(
 			'header_search'        => true,
+			'scroll_to_top'        => false,
 			'footer_text'          => '',
 			'credit_link'          => true,
 			'header_color'         => '#454545',

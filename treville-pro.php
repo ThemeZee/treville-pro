@@ -114,6 +114,7 @@ class Treville_Pro {
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/modules/class-footer-line.php';
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/modules/class-footer-widgets.php';
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/modules/class-header-area.php';
+		require_once TREVILLE_PRO_PLUGIN_DIR . '/includes/modules/class-scroll-to-top.php';
 
 		// Include Magazine Widgets.
 		require_once TREVILLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-horizontal-box.php';
@@ -135,7 +136,7 @@ class Treville_Pro {
 		// Enqueue Treville Pro Stylesheet.
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_styles' ), 11 );
 
-		// Register additional Magazine Post Widgets.
+		// Register additional Magazine Widgets.
 		add_action( 'widgets_init', array( __CLASS__, 'register_widgets' ) );
 
 		// Add Settings link to Plugin actions.
