@@ -48,3 +48,24 @@
 .customize-control-treville_pro_custom_font .actions .button:hover {
 	cursor: pointer;
 }
+
+/* Magazine Sections */
+.adding-magazine-widget #available-widgets #available-widgets-list [id*='widget-tpl-treville-magazine-posts-sidebar'] {
+	display: none !important;
+}
+
+.adding-magazine-widget #available-widgets [id*='widget-tpl-treville-magazine-posts-boxed'] .widget-top::before {
+	background-image: url( '../images/magazine-horizontal-box.png' );
+}
+
+.adding-magazine-widget #available-widgets [id*='widget-tpl-treville-magazine-vertical-box'] .widget-top::before {
+	background-image: url( '../images/magazine-vertical-box.png' );
+}
+
+.adding-magazine-widget #available-widgets [id*='widget-tpl-treville-magazine-posts-list'] .widget-top::before {
+	background-image: url( '../images/magazine-list.png' );
+}
+
+.adding-magazine-widget #available-widgets [id*='widget-tpl-treville-magazine-posts-single'] .widget-top::before {
+	background-image: url( '../images/magazine-single.png' );
+}
