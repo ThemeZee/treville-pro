@@ -24,7 +24,7 @@ class Treville_Pro_Magazine_Single_Widget extends WP_Widget {
 			esc_html__( 'Magazine (Single Post)', 'treville-pro' ), // Name.
 			array(
 				'classname' => 'treville-magazine-single-widget',
-				'description' => esc_html__( 'Displays a single post from a selected category. Please use this widget ONLY in the Magazine Homepage widget area.', 'treville-pro' ),
+				'description' => esc_html__( 'Displays a single post from a selected category.', 'treville-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -36,7 +36,7 @@ class Treville_Pro_Magazine_Single_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'title'	   => '',
+			'title'    => esc_html__( 'Magazine (Single Post)', 'treville-pro' ),
 			'category' => 0,
 		);
 

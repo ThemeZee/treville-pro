@@ -36,9 +36,9 @@ class Treville_Pro_Magazine_Sidebar_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'title'				=> '',
-			'category'			=> 0,
-			'number'			=> 4,
+			'title'    => esc_html__( 'Magazine (Sidebar)', 'treville-pro' ),
+			'category' => 0,
+			'number'   => 4,
 		);
 
 		return $defaults;

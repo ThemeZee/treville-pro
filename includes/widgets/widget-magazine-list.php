@@ -24,7 +24,7 @@ class Treville_Pro_Magazine_List_Widget extends WP_Widget {
 			esc_html__( 'Magazine (List)', 'treville-pro' ), // Name.
 			array(
 				'classname' => 'treville-magazine-list-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category in a list layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'treville-pro' ),
+				'description' => esc_html__( 'Displays your posts from a selected category in a list layout.', 'treville-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -36,7 +36,7 @@ class Treville_Pro_Magazine_List_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'title'    => '',
+			'title'    => esc_html__( 'Magazine (List)', 'treville-pro' ),
 			'category' => 0,
 			'number'   => 3,
 		);
