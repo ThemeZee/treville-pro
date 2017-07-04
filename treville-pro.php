@@ -5,7 +5,7 @@ Plugin URI: http://themezee.com/addons/treville-pro/
 Description: Adds additional features like footer widgets, custom colors, custom fonts, custom menus, and Magazine Post widgets to the Treville theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.1
+Version: 1.1.1
 Text Domain: treville-pro
 Domain Path: /languages/
 License: GPL v3
@@ -62,7 +62,7 @@ class Treville_Pro {
 		define( 'TREVILLE_PRO_NAME', 'Treville Pro' );
 
 		// Define Version Number.
-		define( 'TREVILLE_PRO_VERSION', '1.1' );
+		define( 'TREVILLE_PRO_VERSION', '1.1.1' );
 
 		// Define Plugin Name.
 		define( 'TREVILLE_PRO_PRODUCT_ID', 123051 );
@@ -222,7 +222,7 @@ class Treville_Pro {
 
 		$options = Treville_Pro_Settings::instance();
 
-		if ( $options->get( 'license_key' ) <> '' ) :
+		if ( '' !== $options->get( 'license_key' ) ) :
 
 			$license_key = trim( $options->get( 'license_key' ) );
 

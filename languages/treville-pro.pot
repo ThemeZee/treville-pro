@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Treville Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2017-05-17 11:22+0200\n"
+"POT-Creation-Date: 2017-07-04 11:35+0200\n"
 "PO-Revision-Date: 2016-05-31 09:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
@@ -21,38 +21,30 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: includes/admin/class-admin-notices.php:55
+#: includes/admin/class-admin-notices.php:52
 #, php-format
 msgid ""
 "Please enter your license key for the %1$s add-on in order to receive "
 "updates and support. <a href=\"%2$s\">Enter License Key</a>"
 msgstr ""
 
-#: includes/admin/class-admin-notices.php:60
-#: includes/admin/class-admin-notices.php:89
-#: includes/admin/class-admin-notices.php:114
+#: includes/admin/class-admin-notices.php:57
+#: includes/admin/class-admin-notices.php:86
 msgid "Dismiss Notice"
 msgstr ""
 
-#: includes/admin/class-admin-notices.php:84
+#: includes/admin/class-admin-notices.php:81
 #, php-format
 msgid ""
 "Your license for %1$s has expired. Please <a href=\"%2$s\">renew</a> to "
 "continue getting updates and support!"
 msgstr ""
 
-#: includes/admin/class-admin-notices.php:110
-#, php-format
-msgid ""
-"The %1$s add-on needs the %2$s theme activated in order to work. You should "
-"deactivate %1$s if you have switched to another theme permanently."
-msgstr ""
-
-#: includes/admin/class-admin-notices.php:137
+#: includes/admin/class-admin-notices.php:108
 msgid "Security check failed"
 msgstr ""
 
-#: includes/admin/class-admin-notices.php:137
+#: includes/admin/class-admin-notices.php:108
 #: includes/admin/class-plugin-updater.php:395
 msgid "Error"
 msgstr ""
@@ -170,46 +162,46 @@ msgstr ""
 msgid "Update Fonts"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:371
+#: includes/modules/class-custom-colors.php:375
 msgid "Theme Colors"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:390
+#: includes/modules/class-custom-colors.php:394
 msgctxt "color setting"
 msgid "Header"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:407
+#: includes/modules/class-custom-colors.php:411
 msgctxt "color setting"
 msgid "Main Navigation"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:424
+#: includes/modules/class-custom-colors.php:428
 msgctxt "color setting"
 msgid "Links and Buttons"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:441
+#: includes/modules/class-custom-colors.php:445
 msgctxt "color setting"
 msgid "Post Titles"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:458
+#: includes/modules/class-custom-colors.php:462
 msgctxt "color setting"
 msgid "Borders"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:475
+#: includes/modules/class-custom-colors.php:479
 msgctxt "color setting"
 msgid "Widget Titles"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:492
+#: includes/modules/class-custom-colors.php:496
 msgctxt "color setting"
 msgid "Footer Widgets"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:509
+#: includes/modules/class-custom-colors.php:513
 msgctxt "color setting"
 msgid "Footer"
 msgstr ""
@@ -317,56 +309,63 @@ msgstr ""
 msgid "Social Icons"
 msgstr ""
 
+#: includes/modules/class-scroll-to-top.php:65
+msgid "Scroll to Top"
+msgstr ""
+
+#: includes/modules/class-scroll-to-top.php:81
+msgid "Display Scroll to Top Button"
+msgstr ""
+
 #: includes/widgets/widget-magazine-horizontal-box.php:24
+#: includes/widgets/widget-magazine-horizontal-box.php:39
 msgid "Magazine (Horizontal Box)"
 msgstr ""
 
 #: includes/widgets/widget-magazine-horizontal-box.php:27
-msgid ""
-"Displays your posts from a selected category in a horizontal box. Please use "
-"this widget ONLY in the Magazine Homepage widget area."
+msgid "Displays your posts from a selected category in a horizontal box."
 msgstr ""
 
-#: includes/widgets/widget-magazine-horizontal-box.php:197
-#: includes/widgets/widget-magazine-list.php:179
-#: includes/widgets/widget-magazine-sidebar.php:179
-#: includes/widgets/widget-magazine-single.php:177
-#: includes/widgets/widget-magazine-vertical-box.php:188
+#: includes/widgets/widget-magazine-horizontal-box.php:198
+#: includes/widgets/widget-magazine-list.php:180
+#: includes/widgets/widget-magazine-sidebar.php:180
+#: includes/widgets/widget-magazine-single.php:178
+#: includes/widgets/widget-magazine-vertical-box.php:189
 msgid "Title:"
 msgstr ""
 
-#: includes/widgets/widget-magazine-horizontal-box.php:203
-#: includes/widgets/widget-magazine-list.php:185
-#: includes/widgets/widget-magazine-sidebar.php:185
-#: includes/widgets/widget-magazine-single.php:183
-#: includes/widgets/widget-magazine-vertical-box.php:194
+#: includes/widgets/widget-magazine-horizontal-box.php:204
+#: includes/widgets/widget-magazine-list.php:186
+#: includes/widgets/widget-magazine-sidebar.php:186
+#: includes/widgets/widget-magazine-single.php:184
+#: includes/widgets/widget-magazine-vertical-box.php:195
 msgid "Category:"
 msgstr ""
 
-#: includes/widgets/widget-magazine-horizontal-box.php:206
-#: includes/widgets/widget-magazine-list.php:188
-#: includes/widgets/widget-magazine-sidebar.php:188
-#: includes/widgets/widget-magazine-single.php:186
-#: includes/widgets/widget-magazine-vertical-box.php:197
+#: includes/widgets/widget-magazine-horizontal-box.php:207
+#: includes/widgets/widget-magazine-list.php:189
+#: includes/widgets/widget-magazine-sidebar.php:189
+#: includes/widgets/widget-magazine-single.php:187
+#: includes/widgets/widget-magazine-vertical-box.php:198
 msgid "All Categories"
 msgstr ""
 
 #: includes/widgets/widget-magazine-list.php:24
+#: includes/widgets/widget-magazine-list.php:39
 msgid "Magazine (List)"
 msgstr ""
 
 #: includes/widgets/widget-magazine-list.php:27
-msgid ""
-"Displays your posts from a selected category in a list layout. Please use "
-"this widget ONLY in the Magazine Homepage widget area."
+msgid "Displays your posts from a selected category in a list layout."
 msgstr ""
 
-#: includes/widgets/widget-magazine-list.php:200
-#: includes/widgets/widget-magazine-sidebar.php:200
+#: includes/widgets/widget-magazine-list.php:201
+#: includes/widgets/widget-magazine-sidebar.php:201
 msgid "Number of posts:"
 msgstr ""
 
 #: includes/widgets/widget-magazine-sidebar.php:24
+#: includes/widgets/widget-magazine-sidebar.php:39
 msgid "Magazine (Sidebar)"
 msgstr ""
 
@@ -377,25 +376,23 @@ msgid ""
 msgstr ""
 
 #: includes/widgets/widget-magazine-single.php:24
+#: includes/widgets/widget-magazine-single.php:39
 msgid "Magazine (Single Post)"
 msgstr ""
 
 #: includes/widgets/widget-magazine-single.php:27
-msgid ""
-"Displays a single post from a selected category. Please use this widget ONLY "
-"in the Magazine Homepage widget area."
+msgid "Displays a single post from a selected category."
 msgstr ""
 
 #: includes/widgets/widget-magazine-vertical-box.php:24
+#: includes/widgets/widget-magazine-vertical-box.php:39
 msgid "Magazine (Vertical Box)"
 msgstr ""
 
 #: includes/widgets/widget-magazine-vertical-box.php:27
-msgid ""
-"Displays your posts from a selected category in a vertical box. Please use "
-"this widget ONLY in the Magazine Homepage widget area."
+msgid "Displays your posts from a selected category in a vertical box."
 msgstr ""
 
-#: treville-pro.php:210
+#: treville-pro.php:211
 msgid "Settings"
 msgstr ""

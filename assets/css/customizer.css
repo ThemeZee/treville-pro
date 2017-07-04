@@ -50,11 +50,11 @@
 }
 
 /* Magazine Sections */
-.adding-magazine-widget #available-widgets #available-widgets-list [id*='widget-tpl-treville-magazine-posts-sidebar'] {
+.adding-magazine-widget #available-widgets #available-widgets-list [id*='widget-tpl-treville-magazine-sidebar'] {
 	display: none !important;
 }
 
-.adding-magazine-widget #available-widgets [id*='widget-tpl-treville-magazine-posts-boxed'] .widget-top::before {
+.adding-magazine-widget #available-widgets [id*='widget-tpl-treville-magazine-horizontal-box'] .widget-top::before {
 	background-image: url( '../images/magazine-horizontal-box.png' );
 }
 
@@ -62,10 +62,10 @@
 	background-image: url( '../images/magazine-vertical-box.png' );
 }
 
-.adding-magazine-widget #available-widgets [id*='widget-tpl-treville-magazine-posts-list'] .widget-top::before {
+.adding-magazine-widget #available-widgets [id*='widget-tpl-treville-magazine-list'] .widget-top::before {
 	background-image: url( '../images/magazine-list.png' );
 }
 
-.adding-magazine-widget #available-widgets [id*='widget-tpl-treville-magazine-posts-single'] .widget-top::before {
+.adding-magazine-widget #available-widgets [id*='widget-tpl-treville-magazine-single'] .widget-top::before {
 	background-image: url( '../images/magazine-single.png' );
 }
