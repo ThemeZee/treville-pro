@@ -60,6 +60,7 @@ class Treville_Pro_Customizer {
 
 		$default_options = array(
 			'header_search'        => true,
+			'author_bio'           => false,
 			'scroll_to_top'        => false,
 			'footer_text'          => '',
 			'credit_link'          => true,
