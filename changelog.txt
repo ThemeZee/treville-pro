@@ -2,6 +2,10 @@
 Treville Pro Changelog
 ===================================
 
+Version 1.2
+-----------------------------------
+* added Author Bio feature
+
 Version 1.1.1
 -----------------------------------
 * added default widget titles for Magazine widgets

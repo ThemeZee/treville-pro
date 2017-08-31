@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Treville Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2017-07-04 11:44+0200\n"
-"PO-Revision-Date: 2017-07-04 11:44+0200\n"
+"POT-Creation-Date: 2017-08-31 11:14+0200\n"
+"PO-Revision-Date: 2017-08-31 11:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: includes/admin/class-admin-notices.php:52
@@ -174,6 +174,19 @@ msgstr "Standard"
 #: includes/customizer/class-customize-font-list-control.php:44
 msgid "Update Fonts"
 msgstr "Schriftarten aktualisieren"
+
+#: includes/modules/class-author-bio.php:60
+#, php-format
+msgid "About %s"
+msgstr "Über %s"
+
+#: includes/modules/class-author-bio.php:62
+msgid "View all posts"
+msgstr "Alle Beiträge ansehen"
+
+#: includes/modules/class-author-bio.php:91
+msgid "Display Author Bio"
+msgstr "Autor Bio anzeigen"
 
 #: includes/modules/class-custom-colors.php:375
 msgid "Theme Colors"
@@ -389,7 +402,7 @@ msgid ""
 "Main Sidebar widget area."
 msgstr ""
 "Zeigt die Beiträge einer gewählten Kategorie. Bitte verwende dieses Widget "
-"in der Sidebar. "
+"in der Sidebar."
 
 #: includes/widgets/widget-magazine-single.php:24
 #: includes/widgets/widget-magazine-single.php:39
@@ -409,6 +422,6 @@ msgstr "Magazin (Vertikale Box)"
 msgid "Displays your posts from a selected category in a vertical box."
 msgstr "Zeigt die Beiträge einer gewählten Kategorie in einer vertikalen Box."
 
-#: treville-pro.php:211
+#: treville-pro.php:212
 msgid "Settings"
 msgstr "Einstellungen"

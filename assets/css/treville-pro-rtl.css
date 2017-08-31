@@ -1,0 +1,582 @@
+/*
+ * Treville Pro CSS
+ *
+ * Copyright(C) 2017, ThemeZee.com - support@themezee.com
+ * License: GPL v3
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * @package Treville Pro
+ */
+
+
+/*--------------------------------------------------------------
+# Header Social Icons
+--------------------------------------------------------------*/
+.header-area .social-icons-navigation {
+	float: left;
+	margin: 0 1.75em 0 0;
+	padding: 0.75em 0 0.65em;
+}
+
+.header-area .social-icons-menu li a {
+	padding: 0.5em;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.header-area .social-icons-menu li a:before {
+	font-size: 21px;
+}
+
+.header-area .social-icons-menu li a:hover,
+.header-area .social-icons-menu li a:active {
+	color: rgba(255,255,255,0.5);
+	text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# Header Search
+--------------------------------------------------------------*/
+.header-search {
+	float: left;
+	margin-left: -1em;
+}
+
+.header-search .search-form .search-field {
+	padding: 1em 1em 0.92em 1em;
+	min-width: 250px;
+	background: #fff;
+	border: none;
+	border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.header-search .search-form .search-submit {
+	margin: 1em;
+	padding: 0 0.4em;
+	background: #fff;
+	border: none;
+}
+
+.header-search .search-form .search-submit .genericon-search {
+	padding: 0;
+	color: #454545;
+	font-size: 24px;
+}
+
+.header-search .search-form .search-submit:hover .genericon-search,
+.header-search .search-form .search-submit:active .genericon-search {
+	color: rgba(0,0,0,0.5);
+}
+
+/*--------------------------------------------------------------
+# Magazine Post Widgets
+--------------------------------------------------------------*/
+
+/* Magazine Vertical Boxed Widget */
+.widget-magazine-vertical-box .left-post {
+	float: right;
+	box-sizing: border-box;
+	padding-left: 0.75em;
+	width: 50%;
+}
+
+.widget-magazine-vertical-box .small-posts {
+	float: left;
+	box-sizing: border-box;
+	padding-bottom: 0.5em;
+	padding-right: 0.75em;
+	width: 50%;
+}
+
+/* Magazine List Widget */
+.widget-magazine-list .large-post .wp-post-image {
+	float: right;
+	margin: 0;
+	max-width: 25%;
+}
+
+.widget-magazine-list .large-post .post-content {
+	float: left;
+	width: 75%;
+	padding: 0.5em 1em;
+}
+
+.widget-magazine-list .large-post .post-content {
+	float: left;
+	width: 75%;
+	padding: 0.5em 1em;
+}
+
+/* Magazine Single Post Widget */
+.treville-magazine-single-widget {
+	padding: 0 0 1.5rem;
+}
+
+.widget-magazine-single .widget-header {
+	margin: 0;
+}
+
+.widget-magazine-single .type-post {
+	margin: 0;
+	border: none;
+}
+
+.widget-magazine-single .type-post .entry-header {
+	padding: 1em 1.5em 0;
+	border: 1px solid transparent;
+}
+
+.widget-magazine-posts .type-post .entry-meta {
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+.widget-magazine-posts .type-post .entry-meta span:before {
+	font-size: 20px;
+}
+
+.widget-magazine-single .type-post .wp-post-image {
+	margin: 1.5em 0 0.4em;
+}
+
+.widget-magazine-single .type-post .post-content {
+	padding: 0.75em 1.5em 1.5em;
+	font-size: 17px;
+	font-size: 1.0625rem;
+}
+
+/*--------------------------------------------------------------
+# Author Bio
+--------------------------------------------------------------*/
+.entry-author {
+	margin: 0;
+	padding: 1.5rem;
+	border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.entry-author .author-avatar {
+	float: right;
+	margin: 0 0 0.15em 1.5em;
+	max-width: 25%;
+}
+
+.entry-author .author-avatar img {
+	vertical-align: top;
+}
+
+.entry-author .author-heading .author-title {
+	display: inline-block;
+	margin: 0 0 0.25em 1em;
+	padding: 0;
+	font-size: 17px;
+	font-size: 1.0625rem;
+}
+
+.entry-author .author-heading .author-link {
+	display: inline-block;
+	margin: 0 0 0.5em;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.entry-author .author-bio {
+	margin: 0;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+/*--------------------------------------------------------------
+# Footer Widgets
+--------------------------------------------------------------*/
+.footer-widgets-background {
+	padding: 2rem 0 0;
+	border-bottom: 1px solid rgba(255,255,255,0.05);
+	background: #454545;
+}
+
+.footer-widgets {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-left: -2rem;
+}
+
+.footer-widget-column {
+	width: 25%;
+	padding-left: 2rem;
+	box-sizing: border-box;
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+}
+
+/* Footer Widget Styling */
+.footer-widgets .widget {
+	color: #fff;
+	border: 1px solid rgba(255,255,255,0.05);
+	box-shadow: none;
+	background: none;
+}
+
+.footer-widgets .widget-header {
+	box-shadow: none;
+}
+
+.footer-widgets .widget-title {
+	color: #fff;
+	background: rgba(255,255,255,0.025);
+	border-bottom: 1px solid rgba(255,255,255,0.025);
+}
+
+.footer-widgets .widget a:link,
+.footer-widgets .widget a:visited  {
+	color: #fff;
+}
+
+.footer-widgets .widget a:hover,
+.footer-widgets .widget a:active  {
+	color: rgba(255,255,255,0.5);
+}
+
+/*--------------------------------------------------------------
+# Footer Navigation
+--------------------------------------------------------------*/
+.footer-navigation {
+	float: left;
+}
+
+.footer-navigation-menu {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 1.25em 0;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+.footer-navigation-menu li {
+	position: relative;
+	float: right;
+}
+
+.footer-navigation-menu a {
+	display: block;
+	margin: 0;
+	padding: 1.2em;
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	font-family: 'Magra', Tahoma, Arial;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.footer-navigation-menu a:link,
+.footer-navigation-menu a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+.footer-navigation-menu a:hover,
+.footer-navigation-menu a:active {
+	color: rgba(255,255,255,0.5);
+}
+
+/*--------------------------------------------------------------
+# Scroll to Top Button
+--------------------------------------------------------------*/
+.scroll-to-top-button {
+	z-index: 9999;
+	width: 45px;
+	height: 45px;
+	display: inline;
+	position: fixed;
+	cursor: pointer;
+	margin: 0 auto;
+	padding: 0;
+	left: 1.5em;
+	bottom: 1.5em;
+	background: #1177aa;
+	transition: none;
+}
+
+.scroll-to-top-button:focus,
+.scroll-to-top-button:active {
+	background: #1177aa;
+}
+
+.scroll-to-top-button:hover {
+	background: #454545;
+}
+
+.scroll-to-top-button:after {
+	display: inline-block;
+	margin: 0 3px 0 0;
+	color: #fff;
+	content: '\f432';
+	vertical-align: top;
+	text-decoration: inherit;
+	font-size: 28px;
+	font-family: 'Genericons';
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Desktop Large ( < 1200px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 75em) {
+	.footer-widgets-background {
+		padding: 1.5rem 0 0;
+	}
+
+	.footer-widgets {
+		margin-left: -1.5rem;
+	}
+
+	/* Default: Four Column Footer Widgets */
+	.footer-widget-column {
+		padding-left: 1.5rem;
+	}
+
+	.scroll-to-top-button {
+		left: 1em;
+		bottom: 1em;
+	}
+}
+
+/*--------------------------------------------------------------
+## Desktop Medium ( < 1040px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 65em) {
+	/* Four Column Footer Widgets */
+	.footer-widget-column:nth-child(1):nth-last-child(4),
+	.footer-widget-column:nth-child(2):nth-last-child(3),
+	.footer-widget-column:nth-child(3):nth-last-child(2),
+	.footer-widget-column:nth-child(4):nth-last-child(1) {
+		width: 50%;
+	}
+}
+
+/*--------------------------------------------------------------
+## Desktop Small ( < 960px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 60em) {
+
+	/* Header Social Icons */
+	.header-area .social-icons-navigation {
+		display: none;
+		float: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.header-area .top-navigation-menu-wrap .social-icons-menu {
+		float: right;
+		display: block;
+		text-align: center;
+		padding: 1.5em 0 0;
+		width: 100%;
+	}
+
+	.header-area .top-navigation-menu-wrap .social-icons-menu li {
+		float: none;
+		display: inline-block;
+	}
+
+	.header-area .top-navigation-menu-wrap .social-icons-menu li a:before {
+		font-size: 24px;
+	}
+
+	/* Footer Navigation */
+	.footer-navigation {
+		float: none;
+		text-align: center;
+	}
+
+	.footer-navigation-menu {
+		padding-bottom: 0;
+	}
+
+	.footer-navigation-menu li {
+		display: inline-block;
+		float: none;
+	}
+
+	.footer-navigation-menu a {
+		padding: 0.8em 1.2em;
+	}
+}
+
+/*--------------------------------------------------------------
+## Tablet Medium ( < 800px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 50em) {
+	/* Three Column Footer Widgets */
+	.footer-widget-column:nth-child(1):nth-last-child(3),
+	.footer-widget-column:nth-child(2):nth-last-child(2),
+	.footer-widget-column:nth-child(3):nth-last-child(1) {
+		width: 100%;
+	}
+
+	.scroll-to-top-button {
+		display: none !important;
+	}
+}
+
+/*--------------------------------------------------------------
+## Mobile Extra Large ( < 640px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 40em) {
+	/* Magazine Widgets */
+	.widget-magazine-horizontal-box .magazine-grid-three-columns .post-column:last-child {
+		display: none;
+	}
+
+	.widget-magazine-list .large-post .wp-post-image {
+		max-width: 30%;
+	}
+
+	.widget-magazine-list .large-post .post-content {
+		width: 70%;
+	}
+
+	.widget-magazine-list .large-post .entry-title {
+		font-size: 17px;
+		font-size: 1.0625rem;
+	}
+
+	/* Footer Navigation Menu */
+	.footer-navigation {
+		padding-bottom: 1.5em;
+		border-bottom: 1px solid rgba(255,255,255,0.05);
+	}
+
+	.footer-navigation-menu li,
+	.footer-navigation-menu a {
+		display: block;
+	}
+
+	.footer-navigation-menu a {
+		padding: 0.6em 0;
+	}
+}
+
+/*--------------------------------------------------------------
+## Mobile Large ( < 560px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 35em) {
+	/* Magazine Vertical Box Widget */
+	.widget-magazine-vertical-box .left-post,
+	.widget-magazine-vertical-box .small-posts {
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+
+	.widget-magazine-vertical-box .small-posts {
+		padding-bottom: 0.5em;
+	}
+
+	.widget-magazine-vertical-box .large-post .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+
+	.widget-magazine-vertical-box .large-post .entry-meta {
+		display: block;
+	}
+
+	/* Footer Widgets */
+	.footer-widgets {
+		margin-left: 0;
+	}
+
+	#footer-widgets .footer-widget-column {
+		padding-left: 0;
+		width: 100%;
+	}
+}
+
+/*--------------------------------------------------------------
+## Mobile Medium ( < 480px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 30em) {
+	/* Author Bio */
+	.entry-author .author-avatar {
+		float: none;
+		margin: 0 0 1em;
+		max-width: 100%;
+	}
+
+	.entry-author .author-heading .author-title {
+		display: block;
+		margin: 0 0 0.25em;
+	}
+
+	.entry-author .author-heading .author-link {
+		display: block;
+	}
+
+	/* Magazine Widgets */
+	.widget-magazine-horizontal-box .magazine-grid-three-columns .post-column:last-child {
+		display: block;
+	}
+
+	.widget-magazine-vertical-box .large-post .entry-title {
+		font-size: 17px;
+		font-size: 1.0625rem;
+	}
+
+	.widget-magazine-list .large-post .wp-post-image {
+		max-width: 35%;
+	}
+
+	.widget-magazine-list .large-post .post-content {
+		width: 65%;
+		padding: 0.25em 0.75em;
+	}
+
+	.widget-magazine-list .large-post .entry-title {
+		font-size: 16px;
+		font-size: 1rem;
+	}
+
+	.widget-magazine-list .large-post .entry-meta {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 25em) {
+	.widget-magazine-vertical-box .large-post .entry-title {
+		font-size: 16px;
+		font-size: 1rem;
+	}
+
+	.widget-magazine-list .large-post .post-content {
+		padding: 0 0.75em;
+	}
+
+	.widget-magazine-list .large-post .entry-title {
+		font-size: 15px;
+		font-size: 0.9375rem;
+	}
+}
+
+/*--------------------------------------------------------------
+## Mobile Small ( < 320px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 20em) {
+	/* Magazine Widgets */
+	.widget-magazine-vertical-box .large-post .entry-title {
+		font-size: 15px;
+		font-size: 0.9375rem;
+	}
+}
