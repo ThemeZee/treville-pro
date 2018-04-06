@@ -76,7 +76,6 @@ class Treville_Pro_Customizer {
 			'title_font'           => 'Magra',
 			'navi_font'            => 'Magra',
 			'widget_title_font'    => 'Magra',
-			'available_fonts'      => 'favorites',
 		);
 
 		return $default_options;
