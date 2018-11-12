@@ -5,11 +5,11 @@ Plugin URI: http://themezee.com/addons/treville-pro/
 Description: Adds additional features like footer widgets, custom colors, custom fonts, custom menus, and Magazine Post widgets to the Treville theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.3
+Version: 1.4
 Text Domain: treville-pro
 Domain Path: /languages/
-License: GPL v3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Treville Pro
 Copyright(C) 2017, ThemeZee.com - support@themezee.com
@@ -17,7 +17,9 @@ Copyright(C) 2017, ThemeZee.com - support@themezee.com
 */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 
 /**
@@ -48,7 +50,6 @@ class Treville_Pro {
 
 		// Setup Action Hooks.
 		self::setup_actions();
-
 	}
 
 	/**
@@ -62,7 +63,7 @@ class Treville_Pro {
 		define( 'TREVILLE_PRO_NAME', 'Treville Pro' );
 
 		// Define Version Number.
-		define( 'TREVILLE_PRO_VERSION', '1.3' );
+		define( 'TREVILLE_PRO_VERSION', '1.4' );
 
 		// Define Plugin Name.
 		define( 'TREVILLE_PRO_PRODUCT_ID', 123051 );
@@ -78,7 +79,6 @@ class Treville_Pro {
 
 		// Plugin Root File.
 		define( 'TREVILLE_PRO_PLUGIN_FILE', __FILE__ );
-
 	}
 
 	/**
@@ -123,7 +123,6 @@ class Treville_Pro {
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-list.php';
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-sidebar.php';
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-single.php';
-
 	}
 
 	/**
@@ -145,7 +144,6 @@ class Treville_Pro {
 
 		// Add automatic plugin updater from ThemeZee Store API.
 		add_action( 'admin_init', array( __CLASS__, 'plugin_updater' ), 0 );
-
 	}
 
 	/**
@@ -178,7 +176,6 @@ class Treville_Pro {
 
 		// Enqueue Custom CSS.
 		wp_add_inline_style( 'treville-pro', $custom_css );
-
 	}
 
 	/**
@@ -198,7 +195,6 @@ class Treville_Pro {
 		register_widget( 'Treville_Pro_Magazine_List_Widget' );
 		register_widget( 'Treville_Pro_Magazine_Sidebar_Widget' );
 		register_widget( 'Treville_Pro_Magazine_Single_Widget' );
-
 	}
 
 	/**
@@ -229,16 +225,14 @@ class Treville_Pro {
 
 			// Setup the updater.
 			$treville_pro_updater = new Treville_Pro_Plugin_Updater( TREVILLE_PRO_STORE_API_URL, __FILE__, array(
-					'version' 	=> TREVILLE_PRO_VERSION,
-					'license' 	=> $license_key,
-					'item_name' => TREVILLE_PRO_NAME,
-					'item_id'   => TREVILLE_PRO_PRODUCT_ID,
-					'author' 	=> 'ThemeZee',
-				)
-			);
+				'version'   => TREVILLE_PRO_VERSION,
+				'license'   => $license_key,
+				'item_name' => TREVILLE_PRO_NAME,
+				'item_id'   => TREVILLE_PRO_PRODUCT_ID,
+				'author'    => 'ThemeZee',
+			) );
 
 		endif;
-
 	}
 }
 

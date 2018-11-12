@@ -50,6 +50,9 @@
 				.hover( function() { $( this ).css( 'background', newval ); },
 					function() { $( this ).css( 'background', '#454545' ); }
 				);
+
+			$( '.has-primary-color' ).css( 'color', newval );
+			$( '.has-primary-background-color' ).css( 'background-color', newval );
 		} );
 	} );
 
