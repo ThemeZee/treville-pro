@@ -1,13 +1,16 @@
 /*
  * Treville Pro CSS
  *
- * Copyright(C) 2017, ThemeZee.com - support@themezee.com
- * License: GPL v3
- * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ * Copyright(C) 2020, ThemeZee.com - support@themezee.com
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *
  * @package Treville Pro
  */
 
+/*--------------------------------------------------------------
+# - CSS Variables
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Header Social Icons
@@ -30,7 +33,7 @@
 
 .header-area .social-icons-menu li a:hover,
 .header-area .social-icons-menu li a:active {
-	color: rgba(255,255,255,0.5);
+	color: rgba(255, 255, 255, 0.5);
 	text-decoration: none;
 }
 
@@ -47,7 +50,7 @@
 	min-width: 250px;
 	background: #fff;
 	border: none;
-	border-left: 1px solid rgba(0,0,0,0.1);
+	border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .header-search .search-form .search-submit {
@@ -65,11 +68,11 @@
 
 .header-search .search-form .search-submit:hover .genericon-search,
 .header-search .search-form .search-submit:active .genericon-search {
-	color: rgba(0,0,0,0.5);
+	color: rgba(0, 0, 0, 0.5);
 }
 
 /*--------------------------------------------------------------
-# Magazine Post Widgets
+# Magazine Widgets
 --------------------------------------------------------------*/
 
 /* Magazine Vertical Boxed Widget */
@@ -151,7 +154,7 @@
 .entry-author {
 	margin: 0;
 	padding: 1.5rem;
-	border-top: 1px solid rgba(0,0,0,0.1);
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .entry-author .author-avatar {
@@ -190,7 +193,7 @@
 --------------------------------------------------------------*/
 .footer-widgets-background {
 	padding: 2rem 0 0;
-	border-bottom: 1px solid rgba(255,255,255,0.05);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 	background: #454545;
 }
 
@@ -214,7 +217,7 @@
 /* Footer Widget Styling */
 .footer-widgets .widget {
 	color: #fff;
-	border: 1px solid rgba(255,255,255,0.05);
+	border: 1px solid rgba(255, 255, 255, 0.05);
 	box-shadow: none;
 	background: none;
 }
@@ -225,22 +228,22 @@
 
 .footer-widgets .widget-title {
 	color: #fff;
-	background: rgba(255,255,255,0.025);
-	border-bottom: 1px solid rgba(255,255,255,0.025);
+	background: rgba(255, 255, 255, 0.025);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.025);
 }
 
 .footer-widgets .widget a:link,
-.footer-widgets .widget a:visited  {
+.footer-widgets .widget a:visited {
 	color: #fff;
 }
 
 .footer-widgets .widget a:hover,
-.footer-widgets .widget a:active  {
-	color: rgba(255,255,255,0.5);
+.footer-widgets .widget a:active {
+	color: rgba(255, 255, 255, 0.5);
 }
 
 /*--------------------------------------------------------------
-# Footer Navigation
+# Footer Menu
 --------------------------------------------------------------*/
 .footer-navigation {
 	float: right;
@@ -281,7 +284,7 @@
 
 .footer-navigation-menu a:hover,
 .footer-navigation-menu a:active {
-	color: rgba(255,255,255,0.5);
+	color: rgba(255, 255, 255, 0.5);
 }
 
 /*--------------------------------------------------------------
@@ -369,7 +372,6 @@
 ## Desktop Small ( < 960px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
-
 	/* Header Social Icons */
 	.header-area .social-icons-navigation {
 		display: none;
@@ -452,7 +454,7 @@
 	/* Footer Navigation Menu */
 	.footer-navigation {
 		padding-bottom: 1.5em;
-		border-bottom: 1px solid rgba(255,255,255,0.05);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 	}
 
 	.footer-navigation-menu li,

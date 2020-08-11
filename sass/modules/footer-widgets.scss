@@ -1,0 +1,50 @@
+.footer-widgets-background {
+	padding: 2rem 0 0;
+	border-bottom: 1px solid rgba(255,255,255,0.05);
+	background: #454545;
+}
+
+.footer-widgets {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -2rem;
+}
+
+.footer-widget-column {
+	width: 25%;
+	padding-right: 2rem;
+	box-sizing: border-box;
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+}
+
+/* Footer Widget Styling */
+.footer-widgets .widget {
+	color: #fff;
+	border: 1px solid rgba(255,255,255,0.05);
+	box-shadow: none;
+	background: none;
+}
+
+.footer-widgets .widget-header {
+	box-shadow: none;
+}
+
+.footer-widgets .widget-title {
+	color: #fff;
+	background: rgba(255,255,255,0.025);
+	border-bottom: 1px solid rgba(255,255,255,0.025);
+}
+
+.footer-widgets .widget a:link,
+.footer-widgets .widget a:visited  {
+	color: #fff;
+}
+
+.footer-widgets .widget a:hover,
+.footer-widgets .widget a:active  {
+	color: rgba(255,255,255,0.5);
+}
