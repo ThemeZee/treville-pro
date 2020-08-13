@@ -8,7 +8,9 @@
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Header Area Class
@@ -47,20 +49,19 @@ class Treville_Pro_Header_Area {
 		// Check if there are menus.
 		if ( has_nav_menu( 'social' ) ) {
 
-			echo '<div id="header-social-icons" class="social-icons-navigation clearfix">';
+			echo '<div id="header-social-icons" class="header-social-icons social-icons-navigation clearfix">';
 
 			// Display Social Icons Menu.
 			wp_nav_menu( array(
 				'theme_location' => 'social',
-				'container' => false,
-				'menu_class' => 'social-icons-menu',
-				'echo' => true,
-				'fallback_cb' => '',
-				'link_before' => '<span class="screen-reader-text">',
-				'link_after' => '</span>',
-				'depth' => 1,
-				)
-			);
+				'container'      => false,
+				'menu_class'     => 'social-icons-menu',
+				'echo'           => true,
+				'fallback_cb'    => '',
+				'link_before'    => '<span class = "screen-reader-text">',
+				'link_after'     => '</span>',
+				'depth'          => 1,
+			) );
 
 			echo '</div>';
 
@@ -100,29 +101,27 @@ class Treville_Pro_Header_Area {
 		// Add Header Search Title.
 		$wp_customize->add_control( new Treville_Customize_Header_Control(
 			$wp_customize, 'treville_theme_options[header_search_title]', array(
-			'label' => esc_html__( 'Header Search', 'treville-pro' ),
-			'section' => 'treville_section_general',
-			'settings' => array(),
-			'priority' => 20,
+				'label'    => esc_html__( 'Header Search', 'treville-pro' ),
+				'section'  => 'treville_section_general',
+				'settings' => array(),
+				'priority' => 20,
 			)
 		) );
 
 		// Add Header Search setting.
 		$wp_customize->add_setting( 'treville_theme_options[header_search]', array(
 			'default'           => true,
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'treville_sanitize_checkbox',
-			)
-		);
+		) );
 		$wp_customize->add_control( 'treville_theme_options[header_search]', array(
-			'label'    => __( 'Display search field in header area', 'treville-pro' ),
+			'label'    => __( 'Display search field in main navigation', 'treville-pro' ),
 			'section'  => 'treville_section_general',
 			'settings' => 'treville_theme_options[header_search]',
 			'type'     => 'checkbox',
 			'priority' => 21,
-			)
-		);
+		) );
 	}
 
 	/**

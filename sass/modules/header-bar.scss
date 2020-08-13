@@ -1,21 +1,31 @@
-.header-area .social-icons-navigation {
-	float: right;
-	margin: 0 0 0 1.75em;
+.header-social-icons {
+	display: none;
 	padding: 0.75em 0 0.65em;
 }
 
-.header-area .social-icons-menu li a {
+.secondary-navigation.toggled-on .header-social-icons {
+	display: block;
+}
+
+.header-social-icons .social-icons-menu li a {
 	padding: 0.5em;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
-.header-area .social-icons-menu li a:before {
+.header-social-icons .social-icons-menu li a::before {
 	font-size: 21px;
 }
 
-.header-area .social-icons-menu li a:hover,
-.header-area .social-icons-menu li a:active {
+.header-social-icons .social-icons-menu li a:hover,
+.header-social-icons .social-icons-menu li a:active {
 	color: rgba(255, 255, 255, 0.5);
 	text-decoration: none;
+}
+
+@media only screen and (min-width: 60em) {
+	#masthead .header-social-icons {
+		display: block;
+		margin-left: 1.75em;
+	}
 }
