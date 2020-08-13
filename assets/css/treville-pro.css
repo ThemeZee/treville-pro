@@ -41,8 +41,13 @@
 # Header Search
 --------------------------------------------------------------*/
 .header-search {
-	float: right;
-	margin-right: -1em;
+	display: none;
+	background: #fff;
+}
+
+.primary-navigation-wrap.toggled-on .header-search {
+	display: block;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .header-search .search-form .search-field {
@@ -50,7 +55,6 @@
 	min-width: 250px;
 	background: #fff;
 	border: none;
-	border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .header-search .search-form .search-submit {
@@ -69,6 +73,17 @@
 .header-search .search-form .search-submit:hover .genericon-search,
 .header-search .search-form .search-submit:active .genericon-search {
 	color: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (min-width: 60em) {
+	#masthead .header-search {
+		display: block;
+		margin-left: auto;
+	}
+
+	.header-search .search-form .search-field {
+		border-left: 1px solid rgba(0, 0, 0, 0.1);
+	}
 }
 
 /*--------------------------------------------------------------
