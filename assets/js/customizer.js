@@ -59,7 +59,7 @@
 	/* Header Color Option */
 	wp.customize( 'treville_theme_options[header_color]', function( value ) {
 		value.bind( function( newval ) {
-			$( '.site-header, .top-navigation-menu ul' )
+			$( '.site-header, .top-navigation ul ul' )
 				.css( 'background', newval );
 
 			var textcolor, hovercolor, bordercolor;
@@ -67,20 +67,26 @@
 			if( isColorLight( newval ) ) {
 				textcolor = '#454545';
 				hovercolor = 'rgba(0,0,0,0.5)';
-				bordercolor = 'rgba(0,0,0,0.2);';
+				bordercolor = 'rgba(0,0,0,0.2)';
 			} else {
 				textcolor = '#ffffff';
 				hovercolor = 'rgba(255,255,255,0.5)';
 				bordercolor = 'rgba(255,255,255,0.1)';
 			}
 
-			$( '.site-title, .site-title a, .site-description, .top-navigation-menu a, .top-navigation-toggle, .top-navigation-menu .submenu-dropdown-toggle, .header-area .social-icons-menu li a' )
+			$( '.site-title, .site-title a, .site-description, .top-navigation ul a, .mobile-menu-toggle, .header-social-icons .social-icons-menu li a' )
 				.css( 'color', textcolor );
-			$( '.site-title, .site-title a, .top-navigation-menu a, .top-navigation-toggle, .top-navigation-menu .submenu-dropdown-toggle, .header-area .social-icons-menu li a' )
+			$( '.site-title, .site-title a, .top-navigation ul a, .mobile-menu-toggle, .header-social-icons .social-icons-menu li a' )
 				.hover( function() { $( this ).css( 'color', hovercolor ); },
 						function() { $( this ).css( 'color', textcolor ); }
 				);
-			$( '.site-description, .top-navigation-menu, .top-navigation-menu a, .top-navigation-menu ul, .top-navigation-menu ul a' )
+			$( '.mobile-menu-toggle .icon, .top-navigation .dropdown-toggle .icon, .top-navigation ul .menu-item-has-children > a > .icon' )
+				.css( 'fill', textcolor );
+			$( '.mobile-menu-toggle, .top-navigation .dropdown-toggle, .top-navigation ul .menu-item-has-children > a' )
+				.hover( function() { $( this ).find('.icon').css( 'fill', hovercolor ); },
+						function() { $( this ).find('.icon').css( 'fill', textcolor ); }
+				);
+			$( '.site-description, .secondary-navigation.toggled-on, .top-navigation ul, .top-navigation ul a, .top-navigation ul ul, .top-navigation ul ul a' )
 				.css( 'border-color', bordercolor );
 		} );
 	} );
@@ -88,7 +94,7 @@
 	/* Main Navigation Color Option */
 	wp.customize( 'treville_theme_options[navi_color]', function( value ) {
 		value.bind( function( newval ) {
-			$( '.main-navigation-wrap, .main-navigation-menu, .main-navigation-menu ul, .header-search .search-form .search-field, .header-search .search-form .search-submit' )
+			$( '.primary-navigation-wrap, .main-navigation ul ul, .header-search, .header-search .search-form .search-field, .header-search .search-form .search-submit' )
 				.css( 'background', newval );
 
 			var textcolor, hovercolor, bordercolor;
@@ -103,13 +109,20 @@
 				bordercolor = 'rgba(0,0,0,0.2);';
 			}
 
-			$( '.main-navigation-menu a, .main-navigation-menu .submenu-dropdown-toggle, .header-search .search-form .search-field, .header-search .search-form .search-submit .genericon-search' )
+			$( '.main-navigation ul a, .header-search .search-form .search-field, .header-search .search-form .search-submit .genericon-search' )
 				.css( 'color', textcolor );
-			$( '.main-navigation-menu a, .main-navigation-menu .submenu-dropdown-toggle, .header-search .search-form .search-submit .genericon-search' )
+			$( '.main-navigation ul a, .header-search .search-form .search-submit .genericon-search' )
 				.hover( function() { $( this ).css( 'color', hovercolor ); },
 						function() { $( this ).css( 'color', textcolor ); }
 				);
-			$( '.main-navigation-wrap, .main-navigation-menu, .main-navigation-menu a, .main-navigation-menu ul, .main-navigation-menu ul a, .main-navigation-menu ul li:last-child > a, .header-search .search-form .search-field' )
+			
+			$( '.main-navigation .dropdown-toggle .icon, .main-navigation ul .menu-item-has-children > a > .icon' )
+				.css( 'fill', textcolor );
+			$( '.main-navigation .dropdown-toggle, .main-navigation ul .menu-item-has-children > a' )
+				.hover( function() { $( this ).find('.icon').css( 'fill', hovercolor ); },
+						function() { $( this ).find('.icon').css( 'fill', textcolor ); }
+				);
+			$( '.main-navigation-wrap, .main-navigation ul, .main-navigation ul a, .main-navigation ul ul, .main-navigation ul ul a, .main-navigation ul ul li:last-child > a, .header-search .search-form .search-field, .primary-navigation-wrap.toggled-on .header-search' )
 				.css( 'border-color', bordercolor );
 		} );
 	} );
@@ -288,7 +301,7 @@
 			var newFont = newval === 'SystemFontStack' ? systemFont : newval;
 
 			// Set CSS.
-			$( '.top-navigation-menu a, .main-navigation-menu a' )
+			$( '.top-navigation ul a, .main-navigation ul a' )
 				.css( 'font-family', newFont );
 
 		} );

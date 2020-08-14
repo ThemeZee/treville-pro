@@ -134,7 +134,7 @@ class Treville_Pro_Custom_Colors {
 			$custom_css .= '
 				/* Header Color Setting */
 				.site-header,
-				.top-navigation-menu ul {
+				.top-navigation ul ul {
 					background: ' . $theme_options['header_color'] . ';
 				}
 			';
@@ -143,10 +143,11 @@ class Treville_Pro_Custom_Colors {
 			if ( self::is_color_light( $theme_options['header_color'] ) ) {
 				$custom_css .= '
 					.site-description,
-					.top-navigation-menu,
-					.top-navigation-menu a,
-					.top-navigation-menu ul,
-					.top-navigation-menu ul a {
+					.secondary-navigation.toggled-on,
+					.top-navigation ul,
+					.top-navigation ul a,
+					.top-navigation ul ul,
+					.top-navigation ul ul a {
 						border-color: rgba(0,0,0,0.2);
 					}
 
@@ -154,28 +155,39 @@ class Treville_Pro_Custom_Colors {
 					.site-title a:link,
 					.site-title a:visited,
 					.site-description,
-					.top-navigation-menu a:link,
-					.top-navigation-menu a:visited,
-					.top-navigation-toggle,
-					.top-navigation-toggle:focus,
-					.top-navigation-menu .submenu-dropdown-toggle,
-					.header-area .social-icons-menu li a:link,
-					.header-area .social-icons-menu li a:visited {
+					.top-navigation ul a:link,
+					.top-navigation ul a:visited,
+					.mobile-menu-toggle,
+					.mobile-menu-toggle:focus,
+					.header-social-icons .social-icons-menu li a:link,
+					.header-social-icons .social-icons-menu li a:visited {
 					    color: #454545;
 					}
 
 					.site-title a:hover,
 					.site-title a:active,
-					.top-navigation-menu a:hover,
-					.top-navigation-menu a:active,
-					.top-navigation-toggle:hover,
-					.top-navigation-toggle:focus,
-					.top-navigation-toggle:active,
-					.top-navigation-menu .submenu-dropdown-toggle:hover,
-					.top-navigation-menu .submenu-dropdown-toggle:active,
-					.header-area .social-icons-menu li a:hover,
-					.header-area .social-icons-menu li a:active {
+					.top-navigation ul a:hover,
+					.top-navigation ul a:active,
+					.mobile-menu-toggle:hover,
+					.mobile-menu-toggle:active,
+					.header-social-icons .social-icons-menu li a:hover,
+					.header-social-icons .social-icons-menu li a:active {
 						color: rgba(0,0,0,0.5);
+					}
+
+					.mobile-menu-toggle .icon,
+					.top-navigation .dropdown-toggle .icon,
+					.top-navigation ul .menu-item-has-children > a > .icon {
+					    fill: #454545;
+					}
+
+					.mobile-menu-toggle:hover .icon,
+					.mobile-menu-toggle:active .icon,
+					.top-navigation .dropdown-toggle:hover .icon,
+					.top-navigation .dropdown-toggle:active .icon,
+					.top-navigation ul .menu-item-has-children > a:hover > .icon,
+					.top-navigation ul .menu-item-has-children > a:active > .icon {
+						fill: rgba(0,0,0,0.5);
 					}
 				';
 			}
@@ -186,9 +198,9 @@ class Treville_Pro_Custom_Colors {
 
 			$custom_css .= '
 				/* Main Navigation Color Setting */
-				.main-navigation-wrap,
-				.main-navigation-menu,
-				.main-navigation-menu ul,
+				.primary-navigation-wrap,
+				.main-navigation ul ul,
+				.header-search,
 				.header-search .search-form .search-field,
 				.header-search .search-form .search-submit {
 					background: ' . $theme_options['navi_color'] . ';
@@ -198,32 +210,42 @@ class Treville_Pro_Custom_Colors {
 			// Check if a light background color was chosen.
 			if ( self::is_color_dark( $theme_options['navi_color'] ) ) {
 				$custom_css .= '
-					.main-navigation-wrap,
-					.main-navigation-menu,
-					.main-navigation-menu a,
-					.main-navigation-menu ul,
-					.main-navigation-menu ul a,
-					.main-navigation-menu ul li:last-child > a,
-					.header-search .search-form .search-field {
+					.primary-navigation-wrap,
+					.main-navigation ul,
+					.main-navigation ul a,
+					.main-navigation ul ul,
+					.main-navigation ul ul a,
+					.main-navigation ul ul li:last-child > a,
+					.header-search .search-form .search-field,
+					.primary-navigation-wrap.toggled-on .header-search {
 						border-color: rgba(255,255,255,0.1);
 					}
 
-					.main-navigation-menu a:link,
-					.main-navigation-menu a:visited,
-					.main-navigation-menu .submenu-dropdown-toggle,
+					.main-navigation ul a:link,
+					.main-navigation ul a:visited,
 					.header-search .search-form .search-field:focus,
 					.header-search .search-form .search-submit .genericon-search {
 					    color: #ffffff;
 					}
 
-					.main-navigation-menu a:hover,
-					.main-navigation-menu a:active,
-					.main-navigation-menu .submenu-dropdown-toggle:hover,
-					.main-navigation-menu .submenu-dropdown-toggle:active,
+					.main-navigation ul a:hover,
+					.main-navigation ul a:active,
 					.header-search .search-form .search-field,
 					.header-search .search-form .search-submit:hover .genericon-search,
 					.header-search .search-form .search-submit:active .genericon-search {
 						color: rgba(255,255,255,0.5);
+					}
+
+					.main-navigation .dropdown-toggle .icon,
+					.main-navigation ul .menu-item-has-children > a > .icon {
+					    fill: #ffffff;
+					}
+
+					.main-navigation .dropdown-toggle:hover .icon,
+					.main-navigation .dropdown-toggle:active .icon,
+					.main-navigation ul .menu-item-has-children > a:hover > .icon,
+					.main-navigation ul .menu-item-has-children > a:active > .icon {
+						fill: rgba(255,255,255,0.5);
 					}
 				';
 			}
