@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Treville Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2018-04-13 10:03+0200\n"
-"PO-Revision-Date: 2018-04-13 10:03+0200\n"
+"POT-Creation-Date: 2020-08-18 14:24+0200\n"
+"PO-Revision-Date: 2020-08-18 14:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: includes/admin/class-admin-notices.php:52
@@ -192,69 +192,69 @@ msgstr "Alle Beiträge ansehen"
 msgid "Display Author Bio"
 msgstr "Autor Bio anzeigen"
 
-#: includes/modules/class-custom-colors.php:375
+#: includes/modules/class-custom-colors.php:470
 msgid "Theme Colors"
 msgstr "Theme Farben"
 
-#: includes/modules/class-custom-colors.php:394
+#: includes/modules/class-custom-colors.php:487
 msgctxt "color setting"
 msgid "Header"
 msgstr "Header"
 
-#: includes/modules/class-custom-colors.php:411
+#: includes/modules/class-custom-colors.php:503
 msgctxt "color setting"
 msgid "Main Navigation"
 msgstr "Hauptnavigation"
 
-#: includes/modules/class-custom-colors.php:428
+#: includes/modules/class-custom-colors.php:519
 msgctxt "color setting"
 msgid "Links and Buttons"
 msgstr "Links und Buttons"
 
-#: includes/modules/class-custom-colors.php:445
+#: includes/modules/class-custom-colors.php:535
 msgctxt "color setting"
 msgid "Post Titles"
 msgstr "Beitrags-Titel"
 
-#: includes/modules/class-custom-colors.php:462
+#: includes/modules/class-custom-colors.php:551
 msgctxt "color setting"
 msgid "Borders"
 msgstr "Rahmen"
 
-#: includes/modules/class-custom-colors.php:479
+#: includes/modules/class-custom-colors.php:567
 msgctxt "color setting"
 msgid "Widget Titles"
 msgstr "Widget Titel"
 
-#: includes/modules/class-custom-colors.php:496
+#: includes/modules/class-custom-colors.php:583
 msgctxt "color setting"
 msgid "Footer Widgets"
 msgstr "Footer Widgets"
 
-#: includes/modules/class-custom-colors.php:513
+#: includes/modules/class-custom-colors.php:599
 msgctxt "color setting"
 msgid "Footer"
 msgstr "Footer"
 
-#: includes/modules/class-custom-fonts.php:210
+#: includes/modules/class-custom-fonts.php:254
 msgid "Theme Fonts"
 msgstr "Theme Schriftarten"
 
-#: includes/modules/class-custom-fonts.php:229
+#: includes/modules/class-custom-fonts.php:271
 msgid "Base Font"
 msgstr "Basis Schriftart"
 
-#: includes/modules/class-custom-fonts.php:245
+#: includes/modules/class-custom-fonts.php:286
 msgctxt "font setting"
 msgid "Headings"
 msgstr "Überschriften"
 
-#: includes/modules/class-custom-fonts.php:261
+#: includes/modules/class-custom-fonts.php:301
 msgctxt "font setting"
 msgid "Navigation"
 msgstr "Navigation"
 
-#: includes/modules/class-custom-fonts.php:277
+#: includes/modules/class-custom-fonts.php:316
 msgctxt "font setting"
 msgid "Widget Titles"
 msgstr "Widget Titel"
@@ -307,15 +307,15 @@ msgstr "Footer Spalte 4"
 msgid "Appears on the fourth footer column."
 msgstr "Erscheint in der vierten Footer Spalte."
 
-#: includes/modules/class-header-area.php:103
+#: includes/modules/class-header-area.php:104
 msgid "Header Search"
 msgstr "Header Suche"
 
 #: includes/modules/class-header-area.php:119
-msgid "Display search field in header area"
-msgstr "Suchfeld im Header anzeigen"
+msgid "Display search field in main navigation"
+msgstr "Suchfeld in Hauptnavigation anzeigen"
 
-#: includes/modules/class-header-area.php:141
+#: includes/modules/class-header-area.php:140
 msgid "Social Icons"
 msgstr "Social Icons"
 
@@ -406,7 +406,7 @@ msgstr "Magazin (Vertikale Box)"
 msgid "Displays your posts from a selected category in a vertical box."
 msgstr "Zeigt die Beiträge einer gewählten Kategorie in einer vertikalen Box."
 
-#: treville-pro.php:212
+#: treville-pro.php:208
 msgid "Settings"
 msgstr "Einstellungen"
 
