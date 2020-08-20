@@ -109,8 +109,9 @@ class Treville_Pro_Custom_Fonts {
 
 			$custom_css .= '
 				/* Navigation Font Setting */
-				.top-navigation-menu a,
-				.main-navigation-menu a {
+				.top-navigation ul,
+				.main-navigation ul,
+				.mobile-menu-toggle {
 					font-family: ' . self::get_font_family( $theme_options['navi_font'] ) . ';
 				}
 			';

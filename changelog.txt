@@ -2,6 +2,10 @@
 Treville Pro Changelog
 ===================================
 
+Version 1.5.1
+-----------------------------------
+* fixed typography settings for navigation menus
+
 Version 1.5
 -----------------------------------
 * updated header search functionality
