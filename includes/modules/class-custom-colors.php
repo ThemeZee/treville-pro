@@ -155,6 +155,7 @@ class Treville_Pro_Custom_Colors {
 					.site-title a:link,
 					.site-title a:visited,
 					.site-description,
+					.top-navigation ul a,
 					.top-navigation ul a:link,
 					.top-navigation ul a:visited,
 					.mobile-menu-toggle,
@@ -221,6 +222,7 @@ class Treville_Pro_Custom_Colors {
 						border-color: rgba(255,255,255,0.1);
 					}
 
+					.main-navigation ul a,
 					.main-navigation ul a:link,
 					.main-navigation ul a:visited,
 					.header-search .search-form .search-field:focus,
