@@ -45,7 +45,7 @@ class Treville_Pro_Scroll_To_Top {
 		$theme_options = Treville_Pro_Customizer::get_theme_options();
 
 		// Call Credit Link function of theme if credit link is activated.
-		if ( true === $theme_options['scroll_to_top'] ) :
+		if ( true === $theme_options['scroll_to_top'] && ! self::is_amp() ) :
 
 			wp_enqueue_script( 'treville-pro-scroll-to-top', TREVILLE_PRO_PLUGIN_URL . 'assets/js/scroll-to-top.js', array( 'jquery' ), TREVILLE_PRO_VERSION, true );
 
@@ -62,8 +62,8 @@ class Treville_Pro_Scroll_To_Top {
 		// Add Scroll to Top headline.
 		$wp_customize->add_control( new Treville_Customize_Header_Control(
 			$wp_customize, 'treville_theme_options[scroll_top_title]', array(
-				'label' => esc_html__( 'Scroll to Top', 'treville-pro' ),
-				'section' => 'treville_pro_section_footer',
+				'label'    => esc_html__( 'Scroll to Top', 'treville-pro' ),
+				'section'  => 'treville_pro_section_footer',
 				'settings' => array(),
 				'priority' => 10,
 			)
@@ -84,6 +84,13 @@ class Treville_Pro_Scroll_To_Top {
 			'type'     => 'checkbox',
 			'priority' => 20,
 		) );
+	}
+
+	/**
+	 * Checks if AMP page is rendered.
+	 */
+	static function is_amp() {
+		return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
 	}
 }
 
