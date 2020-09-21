@@ -8,7 +8,9 @@
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Scroll to Top Class
@@ -72,7 +74,7 @@ class Treville_Pro_Scroll_To_Top {
 		// Add Scroll to Top setting.
 		$wp_customize->add_setting( 'treville_theme_options[scroll_to_top]', array(
 			'default'           => false,
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'treville_sanitize_checkbox',
 		) );
