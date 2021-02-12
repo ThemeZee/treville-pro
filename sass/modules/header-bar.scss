@@ -29,3 +29,29 @@
 		margin-left: 1.75em;
 	}
 }
+
+@media only screen and (max-width: 60em) {
+	.header-area .social-icons-navigation {
+		display: none;
+		float: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.header-area .top-navigation-menu-wrap .social-icons-menu {
+		float: left;
+		display: block;
+		text-align: center;
+		padding: 1.5em 0 0;
+		width: 100%;
+	}
+
+	.header-area .top-navigation-menu-wrap .social-icons-menu li {
+		float: none;
+		display: inline-block;
+	}
+
+	.header-area .top-navigation-menu-wrap .social-icons-menu li a:before {
+		font-size: 24px;
+	}
+}
