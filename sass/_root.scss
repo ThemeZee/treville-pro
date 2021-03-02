@@ -1,0 +1,8 @@
+:root {
+	@include variable(--footer-widgets-background-color, $themeColors);
+	@include variable(--footer-widgets-title-color, $themeColors);
+	@include variable(--footer-widgets-text-color, $themeColors);
+	@include variable(--footer-widgets-link-color, $themeColors);
+	@include variable(--footer-widgets-link-hover-color, $themeColors);
+	@include variable(--footer-widgets-border-color, $themeColors);
+}

@@ -19,7 +19,7 @@
 
 .header-social-icons .social-icons-menu li a:hover,
 .header-social-icons .social-icons-menu li a:active {
-	color: rgba(255, 255, 255, 0.5);
+	@include color(--top-navi-hover-color);
 	text-decoration: none;
 }
 
@@ -51,7 +51,7 @@
 		display: inline-block;
 	}
 
-	.header-area .top-navigation-menu-wrap .social-icons-menu li a:before {
+	.header-area .top-navigation-menu-wrap .social-icons-menu li a::before {
 		font-size: 24px;
 	}
 }
