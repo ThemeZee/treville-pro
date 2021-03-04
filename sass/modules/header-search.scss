@@ -12,8 +12,13 @@
 .header-search .search-form .search-field {
 	padding: 1em 1em 0.92em 1em;
 	min-width: 250px;
+	@include color(--navi-color);
 	@include background(--navi-background-color);
 	border: none;
+
+	&::placeholder {
+		@include color(--navi-hover-color);
+	}
 }
 
 .header-search .search-form .search-submit {

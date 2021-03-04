@@ -36,10 +36,13 @@
 	padding: 0.5em;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
+	color: #fff;
+	color: var(--top-navi-color);
 }
 
 .header-social-icons .social-icons-menu li a::before {
 	font-size: 21px;
+	color: currentColor;
 }
 
 .header-social-icons .social-icons-menu li a:hover,
@@ -101,9 +104,16 @@
 .header-search .search-form .search-field {
 	padding: 1em 1em 0.92em 1em;
 	min-width: 250px;
+	color: #454545;
+	color: var(--navi-color);
 	background-color: #fff;
 	background-color: var(--navi-background-color);
 	border: none;
+}
+
+.header-search .search-form .search-field::placeholder {
+	color: rgba(0, 0, 0, 0.5);
+	color: var(--navi-hover-color);
 }
 
 .header-search .search-form .search-submit {
