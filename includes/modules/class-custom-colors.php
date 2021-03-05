@@ -117,7 +117,6 @@ class Treville_Pro_Custom_Colors {
 				$color_variables .= '--footer-widgets-link-color: #151515;';
 				$color_variables .= '--footer-widgets-link-hover-color: rgba(0, 0, 0, 0.5);';
 				$color_variables .= '--footer-widgets-border-color: rgba(0, 0, 0, 0.05);';
-
 			}
 		}
 

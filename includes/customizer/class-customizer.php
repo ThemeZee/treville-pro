@@ -91,7 +91,7 @@ class Treville_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_js() {
-		wp_enqueue_script( 'treville-pro-customizer-js', TREVILLE_PRO_PLUGIN_URL . 'assets/js/customize-preview.min.js', array( 'customize-preview' ), '20210212', true );
+		wp_enqueue_script( 'treville-pro-customizer-js', TREVILLE_PRO_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), '20210214', true );
 	}
 
 	/**

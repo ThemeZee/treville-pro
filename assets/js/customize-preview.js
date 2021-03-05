@@ -19,215 +19,138 @@
 		} );
 	} );
 
-	/* Link & Button Color Option */
-	wp.customize( 'treville_theme_options[link_color]', function( value ) {
-		value.bind( function( newval ) {
-
-			$( '.entry-content a:link, .entry-content a:visited, .widget a:link, .widget a:visited, .post-navigation a:link, .post-navigation a:visited, .comments-area a:link, .comments-area a:visited, .breadcrumbs a:link, .breadcrumbs a:visited' )
-				.not( $('.footer-widgets .widget a, .tzwb-tabbed-content .tzwb-tabnavi li a, .widget-magazine-posts a, .widget_tag_cloud .tagcloud a') )
-				.css( 'color', newval );
-			$( '.entry-content a, .post-navigation a, .comments-area a, .breadcrumbs a, .widget a' )
-				.not( $('.footer-widgets .widget a, .tzwb-tabbed-content .tzwb-tabnavi li a, .widget-magazine-posts a, .widget_tag_cloud .tagcloud a') )
-				.hover( function() { $( this ).css( 'color', '#454545' ); },
-					function() { $( this ).css( 'color', newval ); }
-				);
-			$( '.post-slider-controls .zeeflex-direction-nav a' )
-				.hover( function() { $( this ).css( 'color', newval ); },
-					function() { $( this ).css( 'color', '#454545' ); }
-				);
-
-			$( 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .entry-categories .meta-categories a, .pagination .current, .infinite-scroll #infinite-handle span, .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab, .tzwb-social-icons .social-icons-menu li a' )
-				.not( $('.header-search .search-form .search-submit') )
-				.css( 'color', '#ffffff' )
-				.css( 'background', newval );
-			$( 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .entry-categories .meta-categories a, .infinite-scroll #infinite-handle span, .tzwb-social-icons .social-icons-menu li a' )
-				.not( $('.header-search .search-form .search-submit') )
-				.hover( function() { $( this ).css( 'background', '#454545' ).css( 'color', '#ffffff' ); },
-					function() { $( this ).css( 'background', newval ).css( 'color', '#ffffff' ); }
-				);
-
-			$( '.widget_tag_cloud .tagcloud a, .entry-tags .meta-tags a, .pagination a, .infinite-scroll #infinite-handle span, .tzwb-tabbed-content .tzwb-tabnavi li a' )
-				.hover( function() { $( this ).css( 'background', newval ); },
-					function() { $( this ).css( 'background', '#454545' ); }
-				);
-
-			$( '.has-primary-color' ).css( 'color', newval );
-			$( '.has-primary-background-color' ).css( 'background-color', newval );
-		} );
-	} );
-
 	/* Header Color Option */
 	wp.customize( 'treville_theme_options[header_color]', function( value ) {
 		value.bind( function( newval ) {
-			$( '.site-header, .top-navigation ul ul' )
-				.css( 'background', newval );
-
-			var textcolor, hovercolor, bordercolor;
+			var text_color, hover_color, border_color;
 
 			if( isColorLight( newval ) ) {
-				textcolor = '#454545';
-				hovercolor = 'rgba(0,0,0,0.5)';
-				bordercolor = 'rgba(0,0,0,0.2)';
+				text_color = '#151515';
+				hover_color = 'rgba(0, 0, 0, 0.5)';
+				border_color = 'rgba(0, 0, 0, 0.1)';
 			} else {
-				textcolor = '#ffffff';
-				hovercolor = 'rgba(255,255,255,0.5)';
-				bordercolor = 'rgba(255,255,255,0.1)';
+				text_color = '#fff';
+				hover_color = 'rgba(255, 255, 255, 0.5)';
+				border_color = 'rgba(255, 255, 255, 0.1)';
 			}
 
-			$( '.site-title, .site-title a, .site-description, .top-navigation ul a, .mobile-menu-toggle, .header-social-icons .social-icons-menu li a' )
-				.css( 'color', textcolor );
-			$( '.site-title, .site-title a, .top-navigation ul a, .mobile-menu-toggle, .header-social-icons .social-icons-menu li a' )
-				.hover( function() { $( this ).css( 'color', hovercolor ); },
-						function() { $( this ).css( 'color', textcolor ); }
-				);
-			$( '.mobile-menu-toggle .icon, .top-navigation .dropdown-toggle .icon, .top-navigation ul .menu-item-has-children > a > .icon' )
-				.css( 'fill', textcolor );
-			$( '.mobile-menu-toggle, .top-navigation .dropdown-toggle, .top-navigation ul .menu-item-has-children > a' )
-				.hover( function() { $( this ).find('.icon').css( 'fill', hovercolor ); },
-						function() { $( this ).find('.icon').css( 'fill', textcolor ); }
-				);
-			$( '.site-description, .secondary-navigation.toggled-on, .top-navigation ul, .top-navigation ul a, .top-navigation ul ul, .top-navigation ul ul a' )
-				.css( 'border-color', bordercolor );
+			document.documentElement.style.setProperty( '--header-background-color', newval );
+			document.documentElement.style.setProperty( '--header-text-color', text_color );
+			document.documentElement.style.setProperty( '--site-title-color', text_color );
+			document.documentElement.style.setProperty( '--site-title-hover-color', hover_color );
+			document.documentElement.style.setProperty( '--top-navi-color', text_color );
+			document.documentElement.style.setProperty( '--top-navi-hover-color', hover_color );
+			document.documentElement.style.setProperty( '--top-navi-border-color', border_color );
 		} );
 	} );
 
 	/* Main Navigation Color Option */
 	wp.customize( 'treville_theme_options[navi_color]', function( value ) {
 		value.bind( function( newval ) {
-			$( '.primary-navigation-wrap, .main-navigation ul ul, .header-search, .header-search .search-form .search-field, .header-search .search-form .search-submit' )
-				.css( 'background', newval );
-
-			var textcolor, hovercolor, bordercolor;
+			var text_color, hover_color, border_color;
 
 			if( isColorDark( newval ) ) {
-				textcolor = '#ffffff';
-				hovercolor = 'rgba(255,255,255,0.5)';
-				bordercolor = 'rgba(255,255,255,0.1)';
+				text_color = '#fff';
+				hover_color = 'rgba(255, 255, 255, 0.5)';
+				border_color = 'rgba(255, 255, 255, 0.2)';
 			} else {
-				textcolor = '#454545';
-				hovercolor = 'rgba(0,0,0,0.5)';
-				bordercolor = 'rgba(0,0,0,0.2);';
+				text_color = '#454545';
+				hover_color = 'rgba(0, 0, 0, 0.5)';
+				border_color = 'rgba(0, 0, 0, 0.2)';
 			}
 
-			$( '.main-navigation ul a, .header-search .search-form .search-field, .header-search .search-form .search-submit .genericon-search' )
-				.css( 'color', textcolor );
-			$( '.main-navigation ul a, .header-search .search-form .search-submit .genericon-search' )
-				.hover( function() { $( this ).css( 'color', hovercolor ); },
-						function() { $( this ).css( 'color', textcolor ); }
-				);
-			
-			$( '.main-navigation .dropdown-toggle .icon, .main-navigation ul .menu-item-has-children > a > .icon' )
-				.css( 'fill', textcolor );
-			$( '.main-navigation .dropdown-toggle, .main-navigation ul .menu-item-has-children > a' )
-				.hover( function() { $( this ).find('.icon').css( 'fill', hovercolor ); },
-						function() { $( this ).find('.icon').css( 'fill', textcolor ); }
-				);
-			$( '.main-navigation-wrap, .main-navigation ul, .main-navigation ul a, .main-navigation ul ul, .main-navigation ul ul a, .main-navigation ul ul li:last-child > a, .header-search .search-form .search-field, .primary-navigation-wrap.toggled-on .header-search' )
-				.css( 'border-color', bordercolor );
+			document.documentElement.style.setProperty( '--navi-background-color', newval );
+			document.documentElement.style.setProperty( '--navi-color', text_color );
+			document.documentElement.style.setProperty( '--navi-hover-color', hover_color );
+			document.documentElement.style.setProperty( '--navi-border-color', border_color );
+		} );
+	} );
+
+	/* Link & Button Color Option */
+	wp.customize( 'treville_theme_options[link_color]', function( value ) {
+		value.bind( function( newval ) {
+			var text_color;
+
+			if( isColorLight( newval ) ) {
+				text_color = '#151515';
+			} else {
+				text_color = '#fff';
+			}
+
+			document.documentElement.style.setProperty( '--link-color', newval );
+			document.documentElement.style.setProperty( '--button-color', newval );
+			document.documentElement.style.setProperty( '--button-text-color', text_color );
 		} );
 	} );
 
 	/* Title Color Option */
 	wp.customize( 'treville_theme_options[title_color]', function( value ) {
 		value.bind( function( newval ) {
-
-			$( '.page-title, .entry-title, .entry-title a:link, .entry-title a:visited' )
-				.css( 'color', newval );
-			$( '.entry-title a' )
-				.hover( function() { $( this ).css( 'color', '#454545' ); },
-						function() { $( this ).css( 'color', newval ); }
-				);
-
+			document.documentElement.style.setProperty( '--title-color', newval );
 		} );
 	} );
 
 	/* Border Color Option */
 	wp.customize( 'treville_theme_options[border_color]', function( value ) {
 		value.bind( function( newval ) {
-
-			$( '.widget, .widget-header, .widget-magazine-columns .magazine-column .magazine-column-content, .type-post, .type-page, .type-attachment, .comments-area, .comment-respond, .comments-header, .comment-reply-title, .page-header .archive-title' )
-				.not( $('.footer-widgets .widget, .footer-widgets .widget-header, .widget-magazine-posts .type-post') )
-				.css( 'box-shadow', 'inset 0 2px ' + newval );
-			$( '.treville-magazine-columns-widget' )
-				.css( 'box-shadow', 'none' );
-
+			document.documentElement.style.setProperty( '--content-border-color', newval );
 		} );
 	} );
 
 	/* Widget Title Color Option */
 	wp.customize( 'treville_theme_options[widget_title_color]', function( value ) {
 		value.bind( function( newval ) {
-
-			$( '.widget-title, .widget-title a:link, .widget-title a:visited, .page-header .archive-title, .comments-header .comments-title, .comment-reply-title' )
-				.not( $('.footer-widgets .widget .widget-title, .footer-widgets .widget .widget-title a' ) )
-				.css( 'color', newval );
-			$( '.widget-title a' )
-				.not( $('.footer-widgets .widget .widget-title, .footer-widgets .widget .widget-title a' ) )
-				.hover( function() { $( this ).css( 'color', '#454545' ); },
-						function() { $( this ).css( 'color', newval ); }
-				);
+			document.documentElement.style.setProperty( '--widget-title-color', newval );
 		} );
 	} );
 
 	/* Footer Widgets Color Option */
 	wp.customize( 'treville_theme_options[footer_widgets_color]', function( value ) {
 		value.bind( function( newval ) {
-			$( '.footer-widgets-background' )
-				.css( 'background', newval );
-
-			var textcolor, hovercolor, bgcolor, bordercolor;
+			var title_color, text_color, link_color, link_hover_color, border_color;
 
 			if( isColorLight( newval ) ) {
-				textcolor = '#454545';
-				hovercolor = 'rgba(0,0,0,0.5)';
-				bgcolor = 'rgba(0,0,0,0.025)';
-				bordercolor = 'rgba(0,0,0,0.05)';
+				title_color = 'rgba(0, 0, 0, 0.025)';
+				text_color = '#151515';
+				link_color = '#151515';
+				link_hover_color = 'rgba(0, 0, 0, 0.5)';
+				border_color = 'rgba(0, 0, 0, 0.05)';
 			} else {
-				textcolor = '#ffffff';
-				hovercolor = 'rgba(255,255,255,0.5)';
-				bgcolor = 'rgba(255,255,255,0.025)';
-				bordercolor = 'rgba(255,255,255,0.05)';
+				title_color = 'rgba(255, 255, 255, 0.025)';
+				text_color = '#fff';
+				link_color = 'rgba(255, 255, 255, 0.5)';
+				link_hover_color = '#fff';
+				border_color = 'rgba(255, 255, 255, 0.05)';
 			}
 
-			$( '.footer-widgets .widget, .footer-widgets .widget-title, .footer-widgets .widget-title a, .footer-widgets .widget a' )
-				.css( 'color', textcolor );
-			$( '.footer-widgets .widget-title a, .footer-widgets .widget a' )
-				.hover( function() { $( this ).css( 'color', hovercolor ); },
-						function() { $( this ).css( 'color', textcolor ); }
-				);
-
-			$( '.footer-widgets .widget' )
-				.css( 'border-color', bordercolor );
-
-			$( '.footer-widgets .widget-title' )
-				.css( 'background', bgcolor )
-				.css( 'border-color', bgcolor );
-
+			document.documentElement.style.setProperty( '--footer-widgets-background-color', newval );
+			document.documentElement.style.setProperty( '--footer-widgets-title-color', title_color );
+			document.documentElement.style.setProperty( '--footer-widgets-text-color', text_color );
+			document.documentElement.style.setProperty( '--footer-widgets-link-color', link_color );
+			document.documentElement.style.setProperty( '--footer-widgets-link-hover-color', link_hover_color );
+			document.documentElement.style.setProperty( '--footer-widgets-border-color', border_color );
 		} );
 	} );
 
 	/* Footer Color Option */
 	wp.customize( 'treville_theme_options[footer_color]', function( value ) {
 		value.bind( function( newval ) {
-			$( '.footer-wrap' )
-				.css( 'background', newval );
-
-			var textcolor, hovercolor;
+			var text_color, link_color, link_hover_color;
 
 			if( isColorLight( newval ) ) {
-				textcolor = '#454545';
-				hovercolor = 'rgba(0,0,0,0.5)';
+				text_color = 'rgba(0, 0, 0, 0.6)';
+				link_color = '#151515';
+				link_hover_color = 'rgba(0, 0, 0, 0.6)';
 			} else {
-				textcolor = '#ffffff';
-				hovercolor = 'rgba(255,255,255,0.5)';
+				text_color = '#ddd';
+				link_color = '#fff';
+				link_hover_color = 'rgba(255, 255, 255, 0.5)';
 			}
 
-			$( '.site-footer, .site-footer .site-info, .site-footer .site-info a, .footer-navigation-menu a' )
-				.css( 'color', textcolor );
-			$( '.site-footer .site-info a, .footer-navigation-menu a' )
-				.hover( function() { $( this ).css( 'color', hovercolor ); },
-						function() { $( this ).css( 'color', textcolor ); }
-				);
+			document.documentElement.style.setProperty( '--footer-background-color', newval );
+			document.documentElement.style.setProperty( '--footer-text-color', text_color );
+			document.documentElement.style.setProperty( '--footer-link-color', link_color );
+			document.documentElement.style.setProperty( '--footer-link-hover-color', link_hover_color );
 		} );
 	} );
 
