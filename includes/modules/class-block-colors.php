@@ -134,7 +134,7 @@ class Treville_Pro_Block_Colors {
 		// Add Section for Block Colors.
 		$wp_customize->add_section( 'treville_pro_section_block_colors', array(
 			'title'    => esc_html__( 'Block Colors', 'treville-pro' ),
-			'priority' => 55,
+			'priority' => 60,
 			'panel'    => 'treville_options_panel',
 		) );
 

@@ -212,7 +212,7 @@ class Treville_Pro_Custom_Fonts {
 		// Add Section for Theme Fonts.
 		$wp_customize->add_section( 'treville_pro_section_typography', array(
 			'title'    => __( 'Typography', 'treville-pro' ),
-			'priority' => 70,
+			'priority' => 80,
 			'panel'    => 'treville_options_panel',
 		) );
 
