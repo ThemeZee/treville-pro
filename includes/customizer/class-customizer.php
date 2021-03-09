@@ -73,8 +73,12 @@ class Treville_Pro_Customizer {
 			'header_color'              => '#454545',
 			'navi_color'                => '#ffffff',
 			'link_color'                => '#1177aa',
-			'border_color'              => '#1177aa',
+			'link_hover_color'          => '#454545',
+			'button_color'              => '#1177aa',
+			'button_hover_color'        => '#454545',
 			'title_color'               => '#1177aa',
+			'title_hover_color'         => '#454545',
+			'border_color'              => '#1177aa',
 			'widget_title_color'        => '#454545',
 			'footer_widgets_color'      => '#454545',
 			'footer_color'              => '#454545',
@@ -99,7 +103,7 @@ class Treville_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_js() {
-		wp_enqueue_script( 'treville-pro-customizer-js', TREVILLE_PRO_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), '20210215', true );
+		wp_enqueue_script( 'treville-pro-customizer-js', TREVILLE_PRO_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), '20210306', true );
 	}
 
 	/**
