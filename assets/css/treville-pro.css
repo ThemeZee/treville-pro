@@ -32,26 +32,6 @@
 	display: block;
 }
 
-.header-social-icons .social-icons-menu li a {
-	padding: 0.5em;
-	-webkit-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-	color: #fff;
-	color: var(--top-navi-color);
-}
-
-.header-social-icons .social-icons-menu li a::before {
-	font-size: 21px;
-	color: currentColor;
-}
-
-.header-social-icons .social-icons-menu li a:hover,
-.header-social-icons .social-icons-menu li a:active {
-	color: rgba(255, 255, 255, 0.5);
-	color: var(--top-navi-hover-color);
-	text-decoration: none;
-}
-
 @media only screen and (min-width: 60em) {
 	#masthead .header-social-icons {
 		display: block;
@@ -149,6 +129,50 @@
 		border-color: rgba(0, 0, 0, 0.2);
 		border-color: var(--navi-border-color);
 	}
+}
+
+/*--------------------------------------------------------------
+# Social Icons
+--------------------------------------------------------------*/
+.header-social-icons .social-icons-menu {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0;
+	padding: 0;
+	border: none;
+	list-style: none;
+}
+
+.header-social-icons .social-icons-menu li {
+	margin: 0;
+	padding: 0;
+	border: none;
+	list-style: none;
+}
+
+.header-social-icons .social-icons-menu li a {
+	display: flex;
+	margin: 0;
+	padding: 0.5em;
+	color: #fff;
+	color: var(--top-navi-color);
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.header-social-icons .social-icons-menu li a:hover,
+.header-social-icons .social-icons-menu li a:active {
+	color: rgba(255, 255, 255, 0.5);
+	color: var(--top-navi-hover-color);
+	text-decoration: none;
+}
+
+.header-social-icons .social-icons-menu li a .icon {
+	margin: 0;
+	width: 19px;
+	height: 19px;
+	vertical-align: top;
+	fill: currentColor;
 }
 
 /*--------------------------------------------------------------

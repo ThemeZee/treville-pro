@@ -7,24 +7,6 @@
 	display: block;
 }
 
-.header-social-icons .social-icons-menu li a {
-	padding: 0.5em;
-	-webkit-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-	@include color(--top-navi-color);
-}
-
-.header-social-icons .social-icons-menu li a::before {
-	font-size: 21px;
-	color: currentColor;
-}
-
-.header-social-icons .social-icons-menu li a:hover,
-.header-social-icons .social-icons-menu li a:active {
-	@include color(--top-navi-hover-color);
-	text-decoration: none;
-}
-
 @media only screen and (min-width: 60em) {
 	#masthead .header-social-icons {
 		display: block;
