@@ -117,6 +117,7 @@ class Treville_Pro {
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/modules/class-footer-widgets.php';
 		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/modules/class-header-area.php';
 		require_once TREVILLE_PRO_PLUGIN_DIR . '/includes/modules/class-scroll-to-top.php';
+		require_once TREVILLE_PRO_PLUGIN_DIR . 'includes/modules/class-widget-areas.php';
 
 		// Include Magazine Widgets.
 		require_once TREVILLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-horizontal-box.php';
