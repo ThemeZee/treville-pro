@@ -99,22 +99,23 @@
 .header-search .search-form .search-submit {
 	margin: 1em;
 	padding: 0 0.4em;
+	color: #454545;
+	color: var(--navi-color);
 	background-color: #fff;
 	background-color: var(--navi-background-color);
 	border: none;
 }
 
-.header-search .search-form .search-submit .genericon-search {
-	padding: 0;
-	color: #454545;
-	color: var(--navi-color);
-	font-size: 24px;
-}
-
-.header-search .search-form .search-submit:hover .genericon-search,
-.header-search .search-form .search-submit:active .genericon-search {
+.header-search .search-form .search-submit:hover,
+.header-search .search-form .search-submit:active {
 	color: rgba(0, 0, 0, 0.5);
 	color: var(--navi-hover-color);
+}
+
+.header-search .search-form .search-submit .icon-search {
+	padding: 0;
+	fill: currentColor;
+	font-size: 24px;
 }
 
 @media only screen and (min-width: 60em) {

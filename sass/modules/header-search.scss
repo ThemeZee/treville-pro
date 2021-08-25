@@ -24,19 +24,20 @@
 .header-search .search-form .search-submit {
 	margin: 1em;
 	padding: 0 0.4em;
+	@include color(--navi-color);
 	@include background(--navi-background-color);
 	border: none;
 }
 
-.header-search .search-form .search-submit .genericon-search {
-	padding: 0;
-	@include color(--navi-color);
-	font-size: 24px;
+.header-search .search-form .search-submit:hover,
+.header-search .search-form .search-submit:active {
+	@include color(--navi-hover-color);
 }
 
-.header-search .search-form .search-submit:hover .genericon-search,
-.header-search .search-form .search-submit:active .genericon-search {
-	@include color(--navi-hover-color);
+.header-search .search-form .search-submit .icon-search {
+	padding: 0;
+	fill: currentColor;
+	font-size: 24px;
 }
 
 @media only screen and (min-width: 60em) {
