@@ -38,7 +38,6 @@
 		margin-left: 1.75em;
 	}
 }
-
 @media only screen and (max-width: 60em) {
 	.header-area .social-icons-navigation {
 		display: none;
@@ -64,7 +63,6 @@
 		font-size: 24px;
 	}
 }
-
 /*--------------------------------------------------------------
 # Header Search
 --------------------------------------------------------------*/
@@ -90,7 +88,6 @@
 	background-color: var(--navi-background-color);
 	border: none;
 }
-
 .header-search .search-form .search-field::placeholder {
 	color: rgba(0, 0, 0, 0.5);
 	color: var(--navi-hover-color);
@@ -131,7 +128,6 @@
 		border-color: var(--navi-border-color);
 	}
 }
-
 /*--------------------------------------------------------------
 # Social Icons
 --------------------------------------------------------------*/
@@ -209,7 +205,6 @@
 		padding: 0 1.5em;
 	}
 }
-
 /*--------------------------------------------------------------
 # Magazine Widgets
 --------------------------------------------------------------*/
@@ -305,7 +300,6 @@
 		font-size: 1.0625rem;
 	}
 }
-
 @media only screen and (max-width: 35em) {
 	.widget-magazine-vertical-box .left-post,
 	.widget-magazine-vertical-box .small-posts {
@@ -327,7 +321,6 @@
 		display: block;
 	}
 }
-
 @media only screen and (max-width: 30em) {
 	.widget-magazine-horizontal-box .magazine-grid-three-columns .post-column:last-child {
 		display: block;
@@ -356,7 +349,6 @@
 		display: none;
 	}
 }
-
 @media only screen and (max-width: 25em) {
 	.widget-magazine-vertical-box .large-post .entry-title {
 		font-size: 16px;
@@ -372,14 +364,12 @@
 		font-size: 0.9375rem;
 	}
 }
-
 @media only screen and (max-width: 20em) {
 	.widget-magazine-vertical-box .large-post .entry-title {
 		font-size: 15px;
 		font-size: 0.9375rem;
 	}
 }
-
 /*--------------------------------------------------------------
 # Author Bio
 --------------------------------------------------------------*/
@@ -438,7 +428,6 @@
 		display: block;
 	}
 }
-
 /*--------------------------------------------------------------
 # Footer Widgets
 --------------------------------------------------------------*/
@@ -524,7 +513,6 @@
 		bottom: 1em;
 	}
 }
-
 @media only screen and (max-width: 65em) {
 	.footer-widget-column:nth-child(1):nth-last-child(4),
 	.footer-widget-column:nth-child(2):nth-last-child(3),
@@ -533,7 +521,6 @@
 		width: 50%;
 	}
 }
-
 @media only screen and (max-width: 50em) {
 	.footer-widget-column:nth-child(1):nth-last-child(3),
 	.footer-widget-column:nth-child(2):nth-last-child(2),
@@ -541,7 +528,6 @@
 		width: 100%;
 	}
 }
-
 @media only screen and (max-width: 35em) {
 	.footer-widgets {
 		margin-right: 0;
@@ -552,7 +538,6 @@
 		width: 100%;
 	}
 }
-
 /*--------------------------------------------------------------
 # Footer Menu
 --------------------------------------------------------------*/
@@ -617,7 +602,6 @@
 		padding: 0.8em 1.2em;
 	}
 }
-
 @media only screen and (max-width: 40em) {
 	.footer-navigation {
 		padding-bottom: 1.5em;
@@ -635,7 +619,6 @@
 		padding: 0.6em 0;
 	}
 }
-
 /*--------------------------------------------------------------
 # Scroll to Top Button
 --------------------------------------------------------------*/

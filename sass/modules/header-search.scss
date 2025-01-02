@@ -1,37 +1,39 @@
+@use "../_mixins";
+
 .header-search {
 	display: none;
-	@include background(--navi-background-color);
+	@include mixins.background(--navi-background-color);
 }
 
 .primary-navigation-wrap.toggled-on .header-search {
 	display: block;
 	border-top: 1px solid;
-	@include border-color(--navi-border-color);
+	@include mixins.border-color(--navi-border-color);
 }
 
 .header-search .search-form .search-field {
 	padding: 1em 1em 0.92em 1em;
 	min-width: 250px;
-	@include color(--navi-color);
-	@include background(--navi-background-color);
+	@include mixins.color(--navi-color);
+	@include mixins.background(--navi-background-color);
 	border: none;
 
 	&::placeholder {
-		@include color(--navi-hover-color);
+		@include mixins.color(--navi-hover-color);
 	}
 }
 
 .header-search .search-form .search-submit {
 	margin: 1em;
 	padding: 0 0.4em;
-	@include color(--navi-color);
-	@include background(--navi-background-color);
+	@include mixins.color(--navi-color);
+	@include mixins.background(--navi-background-color);
 	border: none;
 }
 
 .header-search .search-form .search-submit:hover,
 .header-search .search-form .search-submit:active {
-	@include color(--navi-hover-color);
+	@include mixins.color(--navi-hover-color);
 }
 
 .header-search .search-form .search-submit .icon-search {
@@ -49,6 +51,6 @@
 
 	.header-search .search-form .search-field {
 		border-left: 1px solid;
-		@include border-color(--navi-border-color);
+		@include mixins.border-color(--navi-border-color);
 	}
 }
