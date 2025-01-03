@@ -25,33 +25,36 @@
 }
 
 /* Footer Widget Styling */
-.footer-widgets .widget {
-	@include mixins.color(--footer-widgets-text-color);
-	border: 1px solid;
-	@include mixins.border-color(--footer-widgets-border-color);
-	box-shadow: none;
-	background: none;
-}
+.footer-widgets,
+.before-footer-widget-area {
+	.widget {
+		@include mixins.color(--footer-widgets-text-color);
+		border: 1px solid;
+		@include mixins.border-color(--footer-widgets-border-color);
+		box-shadow: none;
+		background: none;
 
-.footer-widgets .widget-header {
-	box-shadow: none;
-}
+		.widget-header {
+			box-shadow: none;
+		}
 
-.footer-widgets .widget-title {
-	@include mixins.color(--footer-widgets-text-color);
-	@include mixins.background(--footer-widgets-title-color);
-	border-bottom: 1px solid;
-	@include mixins.border-color(--footer-widgets-title-color);
-}
+		.widget-title {
+			@include mixins.color(--footer-widgets-text-color);
+			@include mixins.background(--footer-widgets-title-color);
+			border-bottom: 1px solid;
+			@include mixins.border-color(--footer-widgets-title-color);
+		}
 
-.footer-widgets .widget a:link,
-.footer-widgets .widget a:visited {
-	@include mixins.color(--footer-widgets-link-color);
-}
+		a:link,
+		a:visited {
+			@include mixins.color(--footer-widgets-link-color);
+		}
 
-.footer-widgets .widget a:hover,
-.footer-widgets .widget a:active {
-	@include mixins.color(--footer-widgets-link-hover-color);
+		a:hover,
+		a:active {
+			@include mixins.color(--footer-widgets-link-hover-color);
+		}
+	}
 }
 
 @media only screen and (max-width: 75em) {

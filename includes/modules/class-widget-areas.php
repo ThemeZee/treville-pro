@@ -35,7 +35,8 @@ class Treville_Pro_Widget_Areas {
 		add_action( 'treville_before_blog', array( __CLASS__, 'display_before_blog_widgets' ), 20 );
 		add_action( 'treville_after_posts', array( __CLASS__, 'display_after_posts_widgets' ), 20 );
 		add_action( 'treville_after_pages', array( __CLASS__, 'display_after_pages_widgets' ), 20 );
-		add_action( 'treville_before_footer', array( __CLASS__, 'display_before_footer_widgets' ), 20 );
+		add_action( 'treville_before_footer', array( __CLASS__, 'display_before_footer_columns' ), 10 );
+		add_action( 'treville_before_footer', array( __CLASS__, 'display_before_footer_copyright' ), 30 );
 	}
 
 	/**
@@ -74,9 +75,16 @@ class Treville_Pro_Widget_Areas {
 	}
 
 	/**
-	 * Displays Before Footer Widgets
+	 * Displays Before Footer Columns
 	 */
-	static function display_before_footer_widgets() {
+	static function display_before_footer_columns() {
+		self::display_widget_area( 'before-footer-columns' );
+	}
+
+	/**
+	 * Displays Before Footer Copyright
+	 */
+	static function display_before_footer_copyright() {
 		self::display_widget_area( 'before-footer' );
 	}
 
@@ -112,10 +120,10 @@ class Treville_Pro_Widget_Areas {
 			'name'          => esc_html__( 'Before Header', 'treville-pro' ),
 			'id'            => 'before-header',
 			'description'   => esc_html_x( 'Appears above the header area.', 'widget area description', 'treville-pro' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+			'after_widget' => '</aside>',
+			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
+			'after_title' => '</h3></div>',
 		) );
 
 		// Register After Header widget area.
@@ -123,10 +131,10 @@ class Treville_Pro_Widget_Areas {
 			'name'          => esc_html__( 'After Header', 'treville-pro' ),
 			'id'            => 'after-header',
 			'description'   => esc_html_x( 'Appears below the header area.', 'widget area description', 'treville-pro' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+			'after_widget' => '</aside>',
+			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
+			'after_title' => '</h3></div>',
 		) );
 
 		// Register Before Blog widget area.
@@ -134,10 +142,10 @@ class Treville_Pro_Widget_Areas {
 			'name'          => esc_html__( 'Before Latest Blog Posts', 'treville-pro' ),
 			'id'            => 'before-blog',
 			'description'   => esc_html_x( 'Appears on the blog page above the latest posts.', 'widget area description', 'treville-pro' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+			'after_widget' => '</aside>',
+			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
+			'after_title' => '</h3></div>',
 		) );
 
 		// Register After Single Posts widget area.
@@ -145,10 +153,10 @@ class Treville_Pro_Widget_Areas {
 			'name'          => esc_html__( 'After Single Posts', 'treville-pro' ),
 			'id'            => 'after-posts',
 			'description'   => esc_html_x( 'Appears below single posts.', 'widget area description', 'treville-pro' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+			'after_widget' => '</aside>',
+			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
+			'after_title' => '</h3></div>',
 		) );
 
 		// Register After Static Pages widget area.
@@ -156,21 +164,32 @@ class Treville_Pro_Widget_Areas {
 			'name'          => esc_html__( 'After Static Pages', 'treville-pro' ),
 			'id'            => 'after-pages',
 			'description'   => esc_html_x( 'Appears below static pages.', 'widget area description', 'treville-pro' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+			'after_widget' => '</aside>',
+			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
+			'after_title' => '</h3></div>',
 		) );
 
-		// Register Before Footer widget area.
+		// Register Before Footer Columns widget area.
 		register_sidebar( array(
-			'name'          => esc_html__( 'Before Footer', 'treville-pro' ),
+			'name'          => esc_html__( 'Before Footer Columns', 'treville-pro' ),
+			'id'            => 'before-footer-columns',
+			'description'   => esc_html_x( 'Appears above the footer columns area.', 'widget area description', 'treville-pro' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+			'after_widget' => '</aside>',
+			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
+			'after_title' => '</h3></div>',
+		) );
+
+		// Register Before Footer Copyright widget area.
+		register_sidebar( array(
+			'name'          => esc_html__( 'Before Footer Copyright', 'treville-pro' ),
 			'id'            => 'before-footer',
-			'description'   => esc_html_x( 'Appears above the footer area.', 'widget area description', 'treville-pro' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
+			'description'   => esc_html_x( 'Appears above the footer copyright area.', 'widget area description', 'treville-pro' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+			'after_widget' => '</aside>',
+			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
+			'after_title' => '</h3></div>',
 		) );
 	}
 }

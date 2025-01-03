@@ -177,7 +177,7 @@
 --------------------------------------------------------------*/
 .before-header-widget-area,
 .after-header-widget-area,
-.before-footer-widget-area {
+.before-footer-columns-widget-area {
 	margin: 0 auto;
 	max-width: 1180px;
 }
@@ -187,8 +187,23 @@
 	padding: 2em 2em 0;
 }
 
-.before-footer-widget-area {
+.before-footer-columns-widget-area {
 	padding: 0 2em;
+}
+
+.before-footer-widget-area {
+	padding: 2em 2em 0;
+	border-bottom: 1px solid;
+	border-color: rgba(255, 255, 255, 0.05);
+	border-color: var(--footer-widgets-border-color);
+	background-color: #454545;
+	background-color: var(--footer-widgets-background-color);
+}
+.before-footer-widget-area .widget {
+	margin-inline: auto;
+	max-width: calc(1180px - 4em);
+	background: none;
+	border: none;
 }
 
 .after-header-widget-area .widget:last-child {
@@ -197,11 +212,12 @@
 
 @media only screen and (max-width: 75em) {
 	.before-header-widget-area,
-	.after-header-widget-area {
+	.after-header-widget-area,
+	.before-footer-widget-area {
 		padding: 1.5em 1.5em 0;
 	}
 
-	.before-footer-widget-area {
+	.before-footer-columns-widget-area {
 		padding: 0 1.5em;
 	}
 }
@@ -458,7 +474,8 @@
 }
 
 /* Footer Widget Styling */
-.footer-widgets .widget {
+.footer-widgets .widget,
+.before-footer-widget-area .widget {
 	color: #fff;
 	color: var(--footer-widgets-text-color);
 	border: 1px solid;
@@ -467,12 +484,12 @@
 	box-shadow: none;
 	background: none;
 }
-
-.footer-widgets .widget-header {
+.footer-widgets .widget .widget-header,
+.before-footer-widget-area .widget .widget-header {
 	box-shadow: none;
 }
-
-.footer-widgets .widget-title {
+.footer-widgets .widget .widget-title,
+.before-footer-widget-area .widget .widget-title {
 	color: #fff;
 	color: var(--footer-widgets-text-color);
 	background-color: rgba(255, 255, 255, 0.025);
@@ -481,15 +498,17 @@
 	border-color: rgba(255, 255, 255, 0.025);
 	border-color: var(--footer-widgets-title-color);
 }
-
 .footer-widgets .widget a:link,
-.footer-widgets .widget a:visited {
+.footer-widgets .widget a:visited,
+.before-footer-widget-area .widget a:link,
+.before-footer-widget-area .widget a:visited {
 	color: #fff;
 	color: var(--footer-widgets-link-color);
 }
-
 .footer-widgets .widget a:hover,
-.footer-widgets .widget a:active {
+.footer-widgets .widget a:active,
+.before-footer-widget-area .widget a:hover,
+.before-footer-widget-area .widget a:active {
 	color: rgba(255, 255, 255, 0.5);
 	color: var(--footer-widgets-link-hover-color);
 }
